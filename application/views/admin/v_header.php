@@ -33,13 +33,16 @@
 
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion side_custom hidden-toggled" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion side_custom hidden-toggled" 
+    id="accordionSidebar"
+    style="background:#00701a"
+    >
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         
         <div class="d-block  sidebar-brand-text mx-3" >
-          SIPAK UCB
+         <i class="fa fa-envelope"></i> SIPAK UCB
           <!-- <p style="font-size:10px"><?php echo $this->m_dah->status_login($this->session->userdata('level')) ?> </p> -->
           
         </div>
@@ -324,9 +327,17 @@
 	<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 buka">
 	  <i class="fa fa-bars"></i>
 	</button>
-
+<div 
+class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  navbar-search"
+style="width:85%!important"
+>
+<marquee behavior="scroll" direction="left" style="font-size:16px;font-weight:600;color:#6a1b9a;">
+Selamat Datang <?php echo $this->m_dah->status_login($this->session->userdata('level')) ?>
+&nbsp;Di Sistem Informasi Pelayanan Administrasi Kependudukan Desa Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara
+</marquee>
+</div>
 	<!-- Topbar Search -->
-	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+	<!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 	  <div class="input-group">
 		<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
 		<div class="input-group-append">
@@ -335,7 +346,7 @@
 		  </button>
 		</div>
 	  </div>
-	</form>
+	</form> -->
 
 	<!-- Topbar Navbar -->
 	<ul class="navbar-nav ml-auto">

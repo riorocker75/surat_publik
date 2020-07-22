@@ -9,11 +9,11 @@
   </div>
 
 
-  <?php show_alert() ?>
+  
   <!-- Content Row -->
 
-  <div class="row">
-    <div class="col-lg-4 mb-3 offset-lg-4">
+  <div class="row" style="margin-top:-20px">
+    <div class="col-lg-4 mb-3 offset-lg-4" >
       <div class="card bg-ungu text-white shadow">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
@@ -122,8 +122,8 @@
     </div>
     <!-- end lampoh kubu -->
 
-
     <div class="col-lg-12 mb-4">
+    <?php show_alert() ?>
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Data Penduduk</h6>
@@ -174,7 +174,7 @@
                       <a title="Lihat data" href="<?php echo base_url() . 'admin/penduduk_view/' . $pd->id ?>"><i class="fa fa-eye" aria-hidden="true"></i> </a>
                       <?php if ($this->session->userdata('level') == "admin") { ?>
                         <a href="<?php echo base_url() . 'admin/penduduk_edit/' . $pd->id ?>"> <i class="fas fa-pen-alt    "></i></a>
-                        <a href="<?php echo base_url() . 'admin/penduduk_delete/' . $pd->id ?>"> <i class="fas fa-trash-alt    "></i></a>
+                        <a href="<?php echo base_url() . 'admin/penduduk_delete/' . $pd->id ?>" onclick="return confirm('Apa Anda Yakin Hapus Data Ini?')"> <i class="fas fa-trash-alt    "></i></a>
                       <?php } else {
                       } ?>
                     </td>

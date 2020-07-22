@@ -1079,7 +1079,11 @@ function struktur_jab_delete($id){
 				'status_hub_keluarga' => $this->input->post('status_hub_keluarga'),
 				'dusun' => $this->input->post('dusun'),
 				'desa' => $this->input->post('desa'),
-				'alamat' => $this->input->post('alamat'),
+				'kecamatan' => "Meurah Mulia",
+				'kabupaten' => "Aceh Utara",
+				'provinsi' =>"Aceh",
+				'kode_pos' => "24372"
+				// 'alamat' => $this->input->post('alamat'),
 
 			);
 			$this->m_dah->insert_data($data_pd,'penduduk');
@@ -1179,7 +1183,11 @@ function struktur_jab_delete($id){
 				'kelurahan' => $this->input->post('kelurahan'),
 				'dusun' => $this->input->post('dusun'),
 				'desa' => $this->input->post('desa'),
-				'alamat' => $this->input->post('alamat'),
+				'kecamatan' => "Meurah Mulia",
+				'kabupaten' => "Aceh Utara",
+				'provinsi' =>"Aceh",
+				'kode_pos' => "24372"
+				// 'alamat' => $this->input->post('alamat'),
 
 			);
 			$this->m_dah->update_data($where,$data,'penduduk');
@@ -1278,7 +1286,11 @@ function struktur_jab_delete($id){
 				'status_hub_keluarga' => $this->input->post('status_hub_keluarga'),
 				'dusun' => $this->input->post('dusun'),
 				'desa' => $this->input->post('desa'),
-				'alamat' => $this->input->post('alamat'),
+				'kecamatan' => "Meurah Mulia",
+				'kabupaten' => "Aceh Utara",
+				'provinsi' =>"Aceh",
+				'kode_pos' => "24372",
+				// 'alamat' => $this->input->post('alamat')
 
 			);
 			$this->m_dah->update_data($where,$data,'penduduk');

@@ -45,6 +45,7 @@
                                 <div class="form-group">
                                     <label for="">Jenis Kelamin</label>
                                     <select class="form-control form-control-user" name="jk">
+                                    <option value="">--Pilih Jenis Kelamin--</option>
                                     <option value="pria">Laki-laki</option>
                                     <option value="wanita">Perempuan</option>
                                 
@@ -54,7 +55,7 @@
                                 <div class="form-group">
                                         <label for="">Agama</label>
                                         <select class="form-control form-control-user" name="agama">
-                                    
+                                    <option value="">--Pilih Agama--</option>
                                     <?php foreach ($agama as $ag) {?>
                                         <option value="<?php echo $ag->agama?>"><?php echo $ag->agama?></option>
                                     <?php }?>
@@ -63,6 +64,7 @@
                                 <div class="form-group">
                                     <label for="">Kewarganegaraan</label>
                                     <select class="form-control form-control-user" name="warga_negara">
+                                    <option value="">--Pilih Kewarganegaraan--</option> 
                                     <option value="wni">Warga Negara Indonesia (WNI)</option>
                                     <option value="wna">Warga Negara Asing (WNA)</option>
                                 
@@ -162,9 +164,30 @@
                                  </div> 
 
                                 <div class="form-group">
+                                    <label for="">Kecamatan</label>
+                                    <input type="text" class="form-control form-control-user" name="kecamatan" value="Meurah Mulia" disabled>
+                                 </div>   
+
+                                   <div class="form-group">
+                                    <label for="">Kabupaten</label>
+                                    <input type="text" class="form-control form-control-user" name="kabupaten" value="Aceh Utara" disabled>
+                                 </div> 
+                                 
+                                 <div class="form-group">
+                                    <label for="">Kode Pos </label>
+                                    <input type="text" class="form-control form-control-user" name="kode_pos" value="24372" disabled>
+                                 </div>
+
+                                  <div class="form-group">
+                                    <label for="">Provinsi </label>
+                                    <input type="text" class="form-control form-control-user" name="provinsi" value="Aceh" disabled>
+                                 </div> 
+
+                                     
+                                <!-- <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input type="text" class="form-control form-control-user" name="alamat" >
-                                 </div>
+                                 </div> -->
                                 
                                    
                             </div>

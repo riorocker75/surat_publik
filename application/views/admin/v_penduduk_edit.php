@@ -154,10 +154,15 @@
                                         <option value="lain">Lainya</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="">Kelurahan</label>
                                     <input type="text" class="form-control form-control-user" name="kelurahan" value="<?php echo $pdk->kelurahan?>">
-                                 </div>
+                                 </div> -->
+
+                                 <div class="form-group">
+                                    <label for="">Kelurahan/Desa</label>
+                                    <input type="text" class="form-control form-control-user" name="desa" value="<?php echo $pdk->desa?>">
+                                 </div> 
                                  <div class="form-group">
                                     <label for="">Dusun</label>
                                    <select class="form-control form-control-user" name="dusun">
@@ -169,15 +174,31 @@
                                     </select>
                                  </div>
 
+                                
                                  <div class="form-group">
-                                    <label for="">Desa</label>
-                                    <input type="text" class="form-control form-control-user" name="desa" value="<?php echo $pdk->desa?>">
-                                 </div> 
+                                    <label for="">Kecamatan</label>
+                                    <input type="text" class="form-control form-control-user" name="kecamatan" value="Meurah Mulia" disabled>
+                                 </div>   
 
+                                   <div class="form-group">
+                                    <label for="">Kabupaten</label>
+                                    <input type="text" class="form-control form-control-user" name="kabupaten" value="Aceh Utara" disabled>
+                                 </div> 
+                                 
+                                 <div class="form-group">
+                                    <label for="">Kode Pos </label>
+                                    <input type="text" class="form-control form-control-user" name="kode_pos" value="24372" disabled>
+                                 </div>
+
+                                  <div class="form-group">
+                                    <label for="">Provinsi </label>
+                                    <input type="text" class="form-control form-control-user" name="provinsi" value="Aceh" disabled>
+                                 </div> 
+                                <!-- 
                                 <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input type="text" class="form-control form-control-user" name="alamat" value="<?php echo $pdk->alamat?>">
-                                 </div>
+                                 </div> -->
                                 
                                    
                             </div>

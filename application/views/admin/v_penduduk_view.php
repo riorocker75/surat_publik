@@ -125,24 +125,45 @@
                                     <label for="">Status Dalam Keluarga</label>
                                     <input class="form-control form-control-user" name="status_hub_keluarga" value="<?php echo $pd->status_hub_keluarga ?>" disabled>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="">Kelurahan</label>
                                     <input type="text" class="form-control form-control-user" name="kelurahan" value="<?php echo $pd->kelurahan ?>" disabled>
+                                </div> -->
+
+                                <div class="form-group">
+                                    <label for="">Kelurahan/Desa</label>
+                                    <input type="text" class="form-control form-control-user" name="desa" value="<?php echo $pd->desa ?>" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Dusun</label>
                                     <input type="text" class="form-control form-control-user" name="dusun" value="<?php echo $pd->dusun ?>" disabled>
                                 </div>
 
+                                
                                 <div class="form-group">
-                                    <label for="">Desa</label>
-                                    <input type="text" class="form-control form-control-user" name="desa" value="<?php echo $pd->desa ?>" disabled>
-                                </div>
+                                    <label for="">Kecamatan</label>
+                                    <input type="text" class="form-control form-control-user" name="kecamatan" value="Meurah Mulia" disabled>
+                                 </div>   
 
-                                <div class="form-group">
+                                   <div class="form-group">
+                                    <label for="">Kabupaten</label>
+                                    <input type="text" class="form-control form-control-user" name="kabupaten" value="Aceh Utara" disabled>
+                                 </div> 
+                                 
+                                 <div class="form-group">
+                                    <label for="">Kode Pos </label>
+                                    <input type="text" class="form-control form-control-user" name="kode_pos" value="24372" disabled>
+                                 </div>
+
+                                  <div class="form-group">
+                                    <label for="">Provinsi </label>
+                                    <input type="text" class="form-control form-control-user" name="provinsi" value="Aceh" disabled>
+                                 </div>                                                     
+
+                                <!-- <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input type="text" class="form-control form-control-user" name="alamat" value="<?php echo $pd->alamat ?>" disabled>
-                                </div>
+                                </div> -->
 
 
                             </div>
