@@ -1,0 +1,64 @@
+		$this->load->database();
+		$surat_id= $this->input->post('surat_id');
+
+		$where_s=array(
+			'surat_mohon_id' => $surat_id
+		);
+
+		$ket_s= $this->input->post('ket_surat');
+		$no_surat=$this->input->post('no_surat');
+
+
+		if($this->input->post('tolak') != ""){
+			$this->form_validation->set_rules('ket_surat','Keterangan diisi dengan alasan mengapa menolak permohonan', 'required');
+
+			if($this->form_validation->run() != true){
+				$data['akte_mati']=$this->m_dah->edit_data($where_s,'sr_akte_mati')->result();
+
+				$this->load->view('admin/v_header');
+				$this->load->view('admin/review/rv_akte_mati',$data);
+				$this->load->view('admin/v_footer');
+			}else{
+				$data_surat_mohon =array(
+					'syarat' =>  $ket_s,
+					'status_surat' => "ditolak"		
+				);
+
+				$data_jenis_surat=array(
+					'status_surat' => "ditolak"
+				);
+				$this->m_dah->update_data($where_s,$data_surat_mohon,'surat_mohon');
+				$this->m_dah->update_data($where_s,$data_jenis_surat,'sr_akte_mati');
+				redirect(base_url().'admin/permohonan_surat/?alert=update');
+			}
+		}
+
+		if($this->input->post('setuju') != ""){
+			$this->form_validation->set_rules('surat_id','Surat Id wajib ada', 'required');
+			$this->form_validation->set_rules('no_surat','Nomor surat Wajib ada!!', 'required');
+			if($this->form_validation->run() != true){
+				$data['akte_mati']=$this->m_dah->edit_data($where_s,'sr_akte_mati')->result();
+			
+				$this->load->view('admin/v_header');
+				$this->load->view('admin/review/rv_akte_mati',$data);
+				$this->load->view('admin/v_footer');
+	
+			}else{
+				$data_surat_mohon=array(
+					'nomor_surat' => $no_surat,
+					'tgl_surat' => date('Y-m-d'),
+					'syarat' => $ket_s,
+					'status_surat' => "diterima"
+				);
+	
+				$data_jenis_surat=array(
+					'nomor_surat' => $no_surat,
+					'tgl_disahkan' => date('Y-m-d'),
+					'status_surat' => "diterima"
+				);
+				$this->m_dah->update_data($where_s,$data_surat_mohon,'surat_mohon');
+				$this->m_dah->update_data($where_s,$data_jenis_surat,'sr_akte_mati');
+				redirect(base_url().'admin/permohonan_surat/?alert=update');
+				
+			}
+		}

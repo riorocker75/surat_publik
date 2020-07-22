@@ -1,0 +1,89 @@
+	$this->load->database();
+			$id_user=$this->session->userdata('penduduk_id');
+		
+			$this->form_validation->set_rules('foto_kk','Foto Copy KTP','required');		
+			$this->form_validation->set_rules('surat_hilang','Surat Keterangan Hilang Polisi','required');		
+
+		
+				// $where_user=array(
+				// 	'id' => $id_user
+				// );
+				// $data['data_diri']=$this->m_dah->edit_data($where_user,'penduduk')->result();
+				// $this->load->view('admin/v_header');
+				// $this->load->view('admin/sesi_surat/x_ktp_hilang',$data);
+				// $this->load->view('admin/v_footer');
+			
+				$rand = rand();
+				
+				
+				$jenis_surat="SKK";
+				$surat_mohon="SKK-".$rand;
+
+					$data_sr= array(
+						'penduduk_id' => $id_user,
+						'tgl_ajukan' => date('Y-m-d'),
+						'surat_mohon_id' => $surat_mohon,
+						'status_surat' => "review"
+					);
+					$this->m_dah->insert_data($data_sr,'sr_ktp_hilang');
+					$id_terakhir = $this->db->insert_id();			
+
+					$data_sm= array(
+						'penduduk_id' => $id_user,
+						'surat_mohon_id' => $surat_mohon,
+						'jenis_surat' => $jenis_surat,
+						'status_surat' => "review"
+					);
+					$this->m_dah->insert_data($data_sm,'surat_mohon');
+
+
+/* 
+---------------------------
+	mulai insert syarat surat
+-----------------------------
+*/
+				if(!empty($_FILES['foto_kk']['name']) ){
+					$this->form_validation->set_rules('foto_kk', 'Foto Copy KK', 'required');
+					$config['file_name'] = $rand.'_'.$_FILES['foto_kk']['name'];				
+					$config['upload_path'] = './upload/syarat/';
+					$config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
+					$this->load->library('upload', $config);
+						if($this->upload->do_upload('foto_kk')){
+							// $data = array('upload_data' => $this->upload->data());	
+							$foto_kk=$this->upload->data();		
+							$file_name = $foto_kk['file_name'];	
+							$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_kk' => $file_name),'sr_ktp_hilang');			
+							redirect(base_url().'admin/sesi_surat/?alert=saved');
+						}else{
+							redirect(base_url().'admin/sesi_surat/?alert=saved');
+							
+						}
+
+				}
+				// end fotocopy KK
+
+				if(!empty($_FILES['surat_hilang']['name']) ){
+					$config2['upload_path'] = './upload/syarat/';
+					$config2['allowed_types'] = 'gif|jpg|png|jpeg|pdf';	
+					$this->form_validation->set_rules('surat_hilang', 'Surat Keterangan Hilang Polisi', 'required');
+					$config2['file_name'] = $rand.'_'.$_FILES['surat_hilang']['name'];				
+					$this->upload->initialize($config2);
+
+						if($this->upload->do_upload('surat_hilang')){
+							// $data = array('upload_data' => $this->upload->data());	
+							$surat_hilang=$this->upload->data();		
+
+							$file_name2 = $surat_hilang['file_name'];	
+							$this->m_dah->update_data(array('id' => $id_terakhir),array('surat_hilang_polisi' => $file_name2),'sr_ktp_hilang');			
+							redirect(base_url().'admin/sesi_surat/?alert=saved');	
+						}else{
+							redirect(base_url().'admin/sesi_surat/?alert=saved');	
+						}
+
+				}
+				// end surat hilang 
+
+				// end else validation
+			
+
+		
