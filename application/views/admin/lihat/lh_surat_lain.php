@@ -1,8 +1,13 @@
 <div class="container-fluid">
-
+      <?php foreach($surat as $sr){}?>  
+     <?php 
+            $wu= array('id',$sr->surat_id);
+            $ops =$this->m_dah->edit_data($wu,'jenis_surat')->result();
+            foreach ($ops as $op) { } 
+        ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Lihat Surat Mohon Kartu Tanda Penduduk Hilang</h1>
+  <h1 class="h3 mb-0 text-gray-800">Lihat Mohon <?php echo $op->nama_surat?></h1>
   <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
   
 </div>
@@ -17,7 +22,9 @@
                         
                     </div>
                     <div class="card-body">
-                        <?php foreach($ktp_hilang as $kh){?>    
+                   
+
+                         
                          <div class="row">
                                 <!-- data diri -->
                                 <div class="col-lg-6 col-md-12 col-12">
@@ -27,7 +34,7 @@
                                         </div> 
 
                                            <?php 
-                                           $where_user=array('id' => $kh->penduduk_id);
+                                           $where_user=array('id' => $sr->penduduk_id);
                                             $data_diri=$this->m_dah->edit_data($where_user, 'penduduk')->result();
                                             foreach($data_diri as $dd ){
                                             ?>
@@ -82,27 +89,27 @@
                                 <div class="syarat">
                                             <div class="title-syarat">
                                                 File Persyaratan 
-                                            </div>  
-                                                    <div class="form-group">
-                                                        <label for="">Fotocopy Kartu Keluarga (KK)</label><br>
-                                                        <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
-                                                    </div>
+                                            </div> 
+                                               
+                                            <label style="margin-left:-20px">
+                                                    <?php echo $op->syarat_surat?>
+                                            </label>
+                                            <div class="form-group">
+                                              
+                                                <?php echo $this->m_dah->preview_file($sr->upload)?>   
+                                            </div>
 
-                                                    <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
-                                                        <div class="form-group">
-                                                            <label for="">Surat Kehilangan Dari Kepolisian</label><br>
-                                                            <?php echo $this->m_dah->preview_file($kh->surat_hilang_polisi)?>   
-                                                        </div>
+                                                  
 
                                     </div>
 
-                                 <input type="hidden" name="surat_id" value="<?php echo $kh->surat_mohon_id?>">  
+                                 <input type="hidden" name="surat_id" value="<?php echo $sr->surat_mohon_id?>">  
                                 </div> 
 
                                 <!-- end syarat -->
 
                          </div>  
-                         <?php }?>   
+                      
 
                      
                 </div>

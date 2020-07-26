@@ -252,7 +252,11 @@ class M_dah extends CI_Model{
 	function pilih_surat_lain_semua($id_penduduk,$table){
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' order by id desc");
 	}
-
+	function get_surat_lain_order($status){
+		$this->db->order_by('id', 'desc');
+		$this->db->where(array('status'=> $status));
+		return $this->db->get('jenis_mohon');
+	}
 
 	function jenis_surat_user($jenis,$surat_mohon_id){
 		
@@ -772,13 +776,13 @@ function status_surat_lain($status){
 			";
 
 		case 'ditolak':
-
+		break;
 		echo "
 				<label class='labil labil-danger'>Ditolak</label>
 			";
 			break;
 		default:
-			# code...
+			echo "tidak dikenali";
 			break;
 	}
 }

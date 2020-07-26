@@ -1969,7 +1969,20 @@ function mohon_surat_act(){
 
 	redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 
+}
 
+function lihat_surat_lain($id){
+	$this->load->database();
+	$id_user=$this->session->userdata('penduduk_id');
+	$where=array(
+		'nomor_mohon_surat' =>	$id
+	);
+
+	$data['surat']=$this->m_dah->edit_data($where,'jenis_mohon')->result();
+	
+	$this->load->view('admin/v_header');
+	$this->load->view('admin/lihat/lh_surat_lain',$data);
+	$this->load->view('admin/v_footer');
 }
 
 

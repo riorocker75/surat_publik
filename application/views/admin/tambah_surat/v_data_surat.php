@@ -44,8 +44,8 @@
                                   <td><?php echo $ds->kode_surat ?> </td>
                                   <td> <?php echo $ds->nama_surat ?> </td>
                                   <td>
-                                    <a href="<?php echo base_url().'admin/tambah_surat_edit/'.$ds->id?>" class="btn btn-warning btn-sm">
-                                      ubah
+                                    <a href="<?php echo base_url().'admin/tambah_surat_edit/'.$ds->id?>" >
+                                     <i class="fa fa-pen"></i>
                                     </a>
                                    </td>
 

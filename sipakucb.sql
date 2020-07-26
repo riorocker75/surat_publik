@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2020 at 03:17 PM
+-- Generation Time: Jul 26, 2020 at 06:43 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -180,7 +180,7 @@ CREATE TABLE `jenis_mohon` (
 --
 
 INSERT INTO `jenis_mohon` (`id`, `penduduk_id`, `surat_id`, `kode_surat`, `tgl_ajukan`, `tgl_disahkan`, `nomor_mohon_surat`, `nomor_surat`, `format_surat`, `upload`, `info`, `status`) VALUES
-(2, '1', '1', 'SKSC', '2020-07-26 00:00:00', '0000-00-00 00:00:00', 'SKSC-3303', '', '', '8323_xxsdasd.PNG', '', 'review');
+(3, '1', '1', 'SKSC', '2020-07-26 00:00:00', '2020-07-26 00:00:00', 'SKSC-7143', '005', '<p>Geuchik Gampong Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara , dengan ini menerangkan bahwa :</p>\r\n\r\n<p>I. DATA KELUARGA</p>\r\n\r\n<table class=\"data_surat\">\r\n	<tbody>\r\n		<tr>\r\n			<td>Nama Kepala Keluarga &nbsp;&nbsp;</td>\r\n			<td>:&nbsp;Sumantri</td>\r\n		</tr>\r\n		<tr>\r\n			<td>No. KK</td>\r\n			<td>:&nbsp;0982772635</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Alamat</td>\r\n			<td>:&nbsp;Gampong Ulee Ceubrek</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;&nbsp;Kecamatan Meurah Mulia. Kabupaten Aceh Utara</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>II. DATA INDIVIDU PENAMBAHAN</p>\r\n\r\n<table class=\"data_surat\">\r\n	<tbody>\r\n		<tr>\r\n			<td>Nama</td>\r\n			<td>:&nbsp;Sumail</td>\r\n		</tr>\r\n		<tr>\r\n			<td>NIK</td>\r\n			<td>:&nbsp;1309928829</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Jenis Kelamin</td>\r\n			<td>:&nbsp;Laki-laki</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Tempat / Tgl. lahir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>\r\n			<td>:&nbsp;Lhokseumawe,&nbsp;13-06-1997</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Agama</td>\r\n			<td>:&nbsp;Islam</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Pendidikan</td>\r\n			<td>:&nbsp;SMA</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Pekerjaan</td>\r\n			<td>:&nbsp;Wiraswasta</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Status Perkawinan</td>\r\n			<td>:&nbsp;Belum Menikah</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Status Hub.Keluarga</td>\r\n			<td>:&nbsp;Anak</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>Benar yang tersebut namanya diatas penduduk Gampong Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara, dan benar ianya ingin melakukan <strong>penambahan</strong> anggota dari Kartu Keluarga (KK).</p>\r\n\r\n<p>Demikian surat keterangan ini kami perbuat dengan sebenarnya agar dapat dipergunakan seperlunya.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div class=\"tanda_tangan\" style=\"margin-top:20px\">\r\n<p style=\"text-align:center\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n</div>\r\n', '1085_xxsdasd.PNG', 'Harap Datang ke kantor besok jam 4', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,7 @@ CREATE TABLE `jenis_surat` (
 --
 
 INSERT INTO `jenis_surat` (`id`, `nama_surat`, `kode_surat`, `syarat_surat`, `format_surat`) VALUES
-(1, 'Surat Keterangan Sehat Covid', 'SKSC', '<ul>\r\n	<li>KTP</li>\r\n	<li>Surat Keterangan Dokter</li>\r\n</ul>\r\n', '<p>tesqsdasd asdasd</p>\r\n');
+(1, 'Surat Keterangan Sehat Covid', 'SKSC', '<ul>\r\n	<li>KTP</li>\r\n	<li>Surat Keterangan Dokter</li>\r\n</ul>\r\n', '<p>Geuchik Gampong Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara , dengan ini menerangkan bahwa :</p>\r\n\r\n<p>I. DATA KELUARGA</p>\r\n\r\n<table class=\"data_surat\">\r\n	<tbody>\r\n		<tr>\r\n			<td>Nama Kepala Keluarga &nbsp;&nbsp;</td>\r\n			<td>:&nbsp;Sumantri</td>\r\n		</tr>\r\n		<tr>\r\n			<td>No. KK</td>\r\n			<td>:&nbsp;0982772635</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Alamat</td>\r\n			<td>:&nbsp;Gampong Ulee Ceubrek</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;&nbsp;Kecamatan Meurah Mulia. Kabupaten Aceh Utara</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>II. DATA INDIVIDU PENAMBAHAN</p>\r\n\r\n<table class=\"data_surat\">\r\n	<tbody>\r\n		<tr>\r\n			<td>Nama</td>\r\n			<td>:&nbsp;Sumail</td>\r\n		</tr>\r\n		<tr>\r\n			<td>NIK</td>\r\n			<td>:&nbsp;1309928829</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Jenis Kelamin</td>\r\n			<td>:&nbsp;Laki-laki</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Tempat / Tgl. lahir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>\r\n			<td>:&nbsp;Lhokseumawe,&nbsp;13-06-1997</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Agama</td>\r\n			<td>:&nbsp;Islam</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Pendidikan</td>\r\n			<td>:&nbsp;SMA</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Pekerjaan</td>\r\n			<td>:&nbsp;Wiraswasta</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Status Perkawinan</td>\r\n			<td>:&nbsp;Belum Menikah</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Status Hub.Keluarga</td>\r\n			<td>:&nbsp;Anak</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>Benar yang tersebut namanya diatas penduduk Gampong Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara, dan benar ianya ingin melakukan <strong>penambahan</strong> anggota dari Kartu Keluarga (KK).</p>\r\n\r\n<p>Demikian surat keterangan ini kami perbuat dengan sebenarnya agar dapat dipergunakan seperlunya.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div class=\"tanda_tangan\" style=\"margin-top:20px\">\r\n<p style=\"text-align:center\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n</div>\r\n');
 
 -- --------------------------------------------------------
 
@@ -414,13 +414,6 @@ CREATE TABLE `sr_ket_miskin` (
   `status_surat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `sr_ket_miskin`
---
-
-INSERT INTO `sr_ket_miskin` (`id`, `nomor_surat`, `surat_mohon_id`, `penduduk_id`, `nama_ayah`, `nama_ibu`, `tgl_diajukan`, `tgl_disahkan`, `foto_kopi_kk`, `foto_kopi_ktp`, `status_surat`) VALUES
-(1, '', 'SKKM-9288', '4', 'Umam', 'Balqis', '2020-06-06 00:00:00', '0000-00-00 00:00:00', '9121_Screenshot_(8).png', '39591_Screenshot_(2).png', 'ditolak');
-
 -- --------------------------------------------------------
 
 --
@@ -499,7 +492,6 @@ CREATE TABLE `sr_kk_baru` (
 --
 
 INSERT INTO `sr_kk_baru` (`id`, `nomor_surat`, `penduduk_id`, `tgl_diajukan`, `tgl_disahkan`, `kepala_keluarga`, `surat_mohon_id`, `no_kk_lama`, `jlh_anggota`, `ket_gk`, `foto_kopi_kk`, `foto_kopi_ktp`, `foto_kopi_nikah`, `foto_kopi_lahir`, `status_surat`, `list_anggota`, `list_admin`) VALUES
-(1, '003', '4', '2020-06-10 00:00:00', '2020-06-10 00:00:00', '4', 'SK3B-77298', '8929910019', '4', '', '5116_Screenshot_(10).png', '27527_Screenshot_(9).png', '22026_Screenshot_(8).png', '31242_Screenshot_(5).png', 'diterima', 'Budi 320019927, Rudi 23901279, Sumail 98290109, Miracle 23919200', '<ol>\r\n	<li>Budi 320019927</li>\r\n	<li>Rudi 23901279</li>\r\n	<li>Sumail 98290109</li>\r\n	<li>Miracle 23919200</li>\r\n</ol>\r\n'),
 (2, '', '1', '2020-07-09 00:00:00', '0000-00-00 00:00:00', '1', 'SK3B-99758', '55663333', '4', '', '5228_Screenshot_(1).png', '64572_Screenshot_(1).png', '44780_Screenshot_(1).png', '31376_Screenshot_(2).png', 'review', 'budi 1920209, Risma 929828', '');
 
 -- --------------------------------------------------------
@@ -523,13 +515,6 @@ CREATE TABLE `sr_kk_kurang` (
   `ket_pindah` text NOT NULL,
   `status_surat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sr_kk_kurang`
---
-
-INSERT INTO `sr_kk_kurang` (`id`, `nomor_surat`, `penduduk_id`, `tgl_diajukan`, `tgl_disahkan`, `surat_mohon_id`, `kpl_keluarga`, `anggota_id`, `no_kk`, `foto_kopi_kk`, `ket_meninggal`, `ket_pindah`, `status_surat`) VALUES
-(1, '002', '4', '2020-06-07 00:00:00', '2020-06-08 00:00:00', 'SKPgAKK-5082', 'Umam', '1', '3341515131', '4405_Screenshot_(8).png', '41888_Screenshot_(2).png', '', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -558,8 +543,7 @@ CREATE TABLE `sr_kk_tambah` (
 --
 
 INSERT INTO `sr_kk_tambah` (`id`, `nomor_surat`, `penduduk_id`, `tgl_diajukan`, `tgl_disahkan`, `surat_mohon_id`, `kpl_keluarga`, `anggota_id`, `no_kk`, `ket_gk`, `foto_kopi_kk`, `foto_kopi_lahir`, `status_surat`) VALUES
-(1, '001', '4', '2020-06-07 00:00:00', '2020-06-08 00:00:00', 'SKPnAKK-3618', 'umam', '1', '9992992001', '6175_Screenshot_(8).png', '28025_Screenshot_(1).png', '54900_Screenshot_(4).png', 'diterima'),
-(2, '004', '4', '2020-06-13 00:00:00', '2020-06-13 00:00:00', 'SKPnAKK-5226', 'Sumantri', '7', '0982772635', '', '7312_Screenshot_(10).png', '49167_Screenshot_(9).png', 'diterima');
+(1, '001', '4', '2020-06-07 00:00:00', '2020-06-08 00:00:00', 'SKPnAKK-3618', 'umam', '1', '9992992001', '6175_Screenshot_(8).png', '28025_Screenshot_(1).png', '54900_Screenshot_(4).png', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -643,12 +627,8 @@ CREATE TABLE `surat_mohon` (
 
 INSERT INTO `surat_mohon` (`id`, `surat_mohon_id`, `penduduk_id`, `jenis_surat`, `nomor_surat`, `tgl_diajukan`, `tgl_surat`, `berlaku_sampai`, `syarat`, `ket_surat`, `notif`, `status_surat`) VALUES
 (9, 'SKK-1179827964', '4', 'SKK', '', '0000-00-00 00:00:00', '2020-06-01 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan KTP Hilang', '3', 'review'),
-(15, 'SKKM-9288', '4', 'SKKM', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maaf ada yang kurang dari surat anda', 'Pengajuan Pembuatan Keterangan Kurang Mampu', '3', 'ditolak'),
 (20, 'SKKTPB-6845', '4', 'SKKTPB', '', '0000-00-00 00:00:00', '2020-06-07 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Pembuatan KTP Baru', '3', 'review'),
-(21, 'SKPgAKK-5082', '4', 'SKPgAKK', '002', '0000-00-00 00:00:00', '2020-06-08 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Pengurangan Anggota Kartu Kelu...', '3', 'diterima'),
 (22, 'SKPnAKK-3618', '4', 'SKPnAKK', '001', '0000-00-00 00:00:00', '2020-06-08 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Penambahan Anggota Kartu Keluarga', '3', 'diterima'),
-(25, 'SK3B-77298', '4', 'SK3B', '003', '2020-06-10 00:00:00', '2020-06-10 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Pembuatan Kartu Keluarga Baru', '3', 'diterima'),
-(26, 'SKPnAKK-5226', '4', 'SKPnAKK', '004', '2020-06-13 00:00:00', '2020-06-13 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Penambahan Anggota Kartu Keluarga', '3', 'diterima'),
 (27, 'SK3B-99758', '1', 'SK3B', '', '2020-07-09 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', 'Pengajuan Pembuatan Kartu Keluarga Baru', '1', 'review');
 
 -- --------------------------------------------------------
@@ -896,7 +876,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `jenis_mohon`
 --
 ALTER TABLE `jenis_mohon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jenis_surat`

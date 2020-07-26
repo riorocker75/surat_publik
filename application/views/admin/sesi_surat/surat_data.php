@@ -55,7 +55,7 @@
                   
                         <?php foreach($surat as $sr){?>
                             <li>
-                            <a href="<?php echo base_url().'user/mohon_surat/'.$sr->id ?>" class="btn btn-default"><i class="fa fa-plus"></i>
+                            <a href="<?php echo base_url().'user/mohon_surat/'.$sr->id ?>" class="btn btn-success"><i class="fa fa-plus"></i>
                                 &nbsp;&nbsp;<?php echo $sr->nama_surat ?>
                             </a>
                         </li>

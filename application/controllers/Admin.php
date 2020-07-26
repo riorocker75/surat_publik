@@ -1426,6 +1426,8 @@ function permohonan_surat(){
 	$data['total_tolak']=$this->m_dah->get_surat_order('ditolak')->num_rows();
 	$data['total_review']=$this->m_dah->get_surat_order('review')->num_rows();
 	
+	$data['surat_lain']=$this->m_dah->get_surat_lain_order('review')->result();
+
 	$this->load->view('admin/v_header');
 	$this->load->view('admin/data_opsi/v_pengajuan_surat',$data);
 	$this->load->view('admin/v_footer');
@@ -1447,6 +1449,12 @@ function arsip_surat(){
 	$data['total_terima']=$this->m_dah->get_surat_order('diterima')->num_rows();
 	$data['total_tolak']=$this->m_dah->get_surat_order('ditolak')->num_rows();
 	$data['total_review']=$this->m_dah->get_surat_order('review')->num_rows();
+	
+	$data['surat_lain_terima']=$this->m_dah->get_surat_lain_order('diterima')->result();
+	$data['surat_lain_tolak']=$this->m_dah->get_surat_lain_order('ditolak')->result();
+
+	$data['surat_lain_total_terima']=$this->m_dah->get_surat_lain_order('diterima')->num_rows();
+	$data['surat_lain_total_tolak']=$this->m_dah->get_surat_lain_order('ditolak')->num_rows();
 	
 	$this->load->view('admin/v_header');
 	$this->load->view('admin/data_opsi/v_arsip_surat',$data);
@@ -3631,6 +3639,117 @@ function delete_ket_cerai_arsip($id){
 
 	// end tambah surat
 
+	// update surat lain review
 
+	function update_surat_lain($id){
+		if($this->session->userdata('level') != "admin"){
+			redirect(base_url());
+		}
+		$this->load->database();
+
+		$where=array(
+			'nomor_mohon_surat' =>	$id
+		);
+
+		$data['surat']=$this->m_dah->edit_data($where,'jenis_mohon')->result();
+		
+		$this->load->view('admin/v_header');
+		$this->load->view('admin/review/rv_surat_lain',$data);
+		$this->load->view('admin/v_footer');
+	}
+
+	function update_surat_lain_act(){
+		if($this->session->userdata('level') != "admin"){
+			redirect(base_url());
+		}
+		$this->load->database();
+
+		$surat_id= $this->input->post('surat_id');
+
+        $where_s=array(
+            'nomor_mohon_surat' => $surat_id
+        );
+
+        $ket_s= $this->input->post('ket_surat');
+        $no_surat=$this->input->post('no_surat');
+        $format= $this->input->post('format');
+
+        
+        if($this->input->post('tolak') != ""){
+            $this->form_validation->set_rules('ket_surat','Keterangan diisi dengan alasan mengapa menolak permohonan', 'required');
+
+            if($this->form_validation->run() != true){
+                redirect('admin/update_surat_lain/'.$surat_id);
+            }else{
+             
+                $data_surat=array(
+                    'status' => "ditolak"
+                );
+                $this->m_dah->update_data($where_s,$data_surat,'jenis_mohon');
+                redirect(base_url().'admin/permohonan_surat/?alert=update');
+            }
+        }
+
+        if($this->input->post('setuju') != ""){
+            $this->form_validation->set_rules('surat_id','Surat Id wajib ada', 'required');
+            $this->form_validation->set_rules('no_surat','Nomor surat Wajib ada!!', 'required');
+            if($this->form_validation->run() != true){
+                redirect('admin/update_surat_lain/'.$surat_id);
+         
+            }else{
+         
+                $data_lain=array(
+                    'nomor_surat' => $no_surat,
+                    'tgl_disahkan' => date('Y-m-d'),
+                    'info' => $ket_s,
+                    'format_surat' => $format,
+                    'status' => "diterima"
+                );
+               
+                $this->m_dah->update_data($where_s,$data_lain,'jenis_mohon');
+                redirect(base_url().'admin/permohonan_surat/?alert=update');
+                
+            }
+        }
+
+
+	}	
+
+		function delete_surat_lain($id){
+		if($this->session->userdata('level') != "admin"){
+			redirect(base_url());
+			}
+				$this->load->database();
+			if($id == ""){
+				redirect('base_url()');
+			}else{
+				$where = array(
+				'nomor_mohon_surat' => $id
+				);
+
+			$data = $this->m_dah->edit_data($where,'jenis_mohon')->row();
+			// hapus di direktori upload/syarat
+
+			@chmod("./upload/syarat/" . $data->upload, 0777);
+			@unlink('./upload/syarat/' . $data->upload);
+
+			// hapus di table 
+			$this->m_dah->delete_data($where,'jenis_mohon');
+			//  hapus tabel surat_mohon
+
+			redirect('admin/permohonan_surat/?alert=post-delete');
+		}
+      }
+
+
+
+
+
+
+
+
+
+
+// end braket file admin.php
     
 }

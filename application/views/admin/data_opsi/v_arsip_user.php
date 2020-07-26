@@ -234,12 +234,9 @@
                                        <?php echo $this->m_dah->status_surat_lain($sl->status)?>
                                     </td>
 
-                                 
-                                   
                                     <td>
-                                    <a href=""></a>
-                                        <!-- <a href="<?php echo base_url().'admin/penduduk_delete/'.$sm->surat_mohon_id?>"> <i class="fas fa-trash-alt    "></i></a> -->
-                                        <!-- update role nya di model/m_dah.php -->
+                                    <a href="<?php echo base_url().'user/lihat_surat_lain/'.$sl->nomor_mohon_surat?>"> <i class="fa fa-eye"></i> </a>
+                                    
                                    
                                     </td>
 

@@ -220,6 +220,25 @@ class Cetak extends CI_Controller {
     }
 
 
+         function cetak_surat_lain($id){
+        $this->load->database();
+
+        if($id === ""){
+            redirect(base_url().'admin');
+        }else{          
+            $where = array(
+                'nomor_mohon_surat' => $id
+             ); 
+            $data['surat'] = $this->m_dah->edit_data($where,'jenis_mohon')->result();
+            $this->load->view('admin/asurat_template/header_surat');
+            $this->load->view('admin/asurat_template/sr_surat_lain',$data);
+            $this->load->view('admin/asurat_template/footer_surat');
+        }
+    }
+
+
+
+
 
 
 
