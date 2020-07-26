@@ -132,9 +132,9 @@
                                  
                                    
                                     <td>
-                                    <a href="<?php echo base_url().'admin/update_surat_lain/'.$sl->nomor_mohon_surat?>"> <i class="fa fa-eye"></i> </a>
+                                    <a href="<?php echo base_url().'admin/update_surat_lain/'.$sl->nomor_mohon_surat ?>"> <i class="fa fa-eye"></i> </a>
                                      &nbsp;&nbsp;
-                                    <a href="<?php echo base_url().'admin/delete_surat_lain/'.$sl->nomor_mohon_surat?>" 
+                                    <a href="<?php echo base_url().'admin/delete_surat_lain/'.$sl->nomor_mohon_surat ?>" 
                                       onclick="return confirm('Anda yakin mau menghapus item ini ?')"> 
                                       <i class="fa fa-trash"></i>
                                      </a>

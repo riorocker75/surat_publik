@@ -1,13 +1,17 @@
 <div class="container-fluid">
-      <?php foreach($surat as $sr){}?>  
+
+
+      <?php foreach($surat as $sr){?>  
      <?php 
-            $wu= array('id',$sr->surat_id);
+            $wu= array('id' => $sr->surat_id);
             $ops =$this->m_dah->edit_data($wu,'jenis_surat')->result();
             foreach ($ops as $op) { } 
         ?>
+
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Review Pemohon <?php echo $op->nama_surat?></h1>
+  <h1 class="h3 mb-0 text-gray-800">Review Pemohon <?php echo $op->nama_surat ?></h1>
   <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
   
 </div>
@@ -153,5 +157,5 @@
 		    </div>
 		</div>
                 </form>
-
+<?php }?>
 </div>

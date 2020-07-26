@@ -1,7 +1,7 @@
 <div class="container-fluid">
       <?php foreach($surat as $sr){}?>  
      <?php 
-            $wu= array('id',$sr->surat_id);
+            $wu= array('id' => $sr->surat_id);
             $ops =$this->m_dah->edit_data($wu,'jenis_surat')->result();
             foreach ($ops as $op) { } 
         ?>
