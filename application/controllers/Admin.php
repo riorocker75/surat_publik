@@ -1477,6 +1477,13 @@ function arsip_surat_lurah(){
 	$data['total_tolak']=$this->m_dah->get_surat_order('ditolak')->num_rows();
 	$data['total_review']=$this->m_dah->get_surat_order('review')->num_rows();
 	
+	$data['surat_lain_terima']=$this->m_dah->get_surat_lain_order('diterima')->result();
+	$data['surat_lain_tolak']=$this->m_dah->get_surat_lain_order('ditolak')->result();
+
+	$data['surat_lain_total_terima']=$this->m_dah->get_surat_lain_order('diterima')->num_rows();
+	$data['surat_lain_total_tolak']=$this->m_dah->get_surat_lain_order('ditolak')->num_rows();
+	
+	
 	$this->load->view('admin/v_header');
 	$this->load->view('admin/data_opsi/v_arsip_surat_lurah',$data);
 	$this->load->view('admin/v_footer');
