@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2020 at 09:28 AM
+-- Generation Time: Jul 26, 2020 at 03:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `surat`
+-- Database: `sipakucb`
 --
 
 -- --------------------------------------------------------
@@ -163,14 +163,24 @@ INSERT INTO `jabatan` (`id`, `jabatan`, `count`) VALUES
 CREATE TABLE `jenis_mohon` (
   `id` int(11) NOT NULL,
   `penduduk_id` text NOT NULL,
+  `surat_id` text NOT NULL,
   `kode_surat` text NOT NULL,
   `tgl_ajukan` datetime NOT NULL,
   `tgl_disahkan` datetime NOT NULL,
-  `ns_preview` text NOT NULL,
+  `nomor_mohon_surat` text NOT NULL,
   `nomor_surat` text NOT NULL,
   `format_surat` longtext NOT NULL,
+  `upload` text NOT NULL,
+  `info` text NOT NULL,
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jenis_mohon`
+--
+
+INSERT INTO `jenis_mohon` (`id`, `penduduk_id`, `surat_id`, `kode_surat`, `tgl_ajukan`, `tgl_disahkan`, `nomor_mohon_surat`, `nomor_surat`, `format_surat`, `upload`, `info`, `status`) VALUES
+(2, '1', '1', 'SKSC', '2020-07-26 00:00:00', '0000-00-00 00:00:00', 'SKSC-3303', '', '', '8323_xxsdasd.PNG', '', 'review');
 
 -- --------------------------------------------------------
 
@@ -186,17 +196,12 @@ CREATE TABLE `jenis_surat` (
   `format_surat` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `jenis_syarat`
+-- Dumping data for table `jenis_surat`
 --
 
-CREATE TABLE `jenis_syarat` (
-  `id` int(11) NOT NULL,
-  `kode_surat` text NOT NULL,
-  `isi_syarat` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `jenis_surat` (`id`, `nama_surat`, `kode_surat`, `syarat_surat`, `format_surat`) VALUES
+(1, 'Surat Keterangan Sehat Covid', 'SKSC', '<ul>\r\n	<li>KTP</li>\r\n	<li>Surat Keterangan Dokter</li>\r\n</ul>\r\n', '<p>tesqsdasd asdasd</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -752,12 +757,6 @@ ALTER TABLE `jenis_surat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenis_syarat`
---
-ALTER TABLE `jenis_syarat`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `pekerjaan`
 --
 ALTER TABLE `pekerjaan`
@@ -897,19 +896,13 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `jenis_mohon`
 --
 ALTER TABLE `jenis_mohon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jenis_surat`
 --
 ALTER TABLE `jenis_surat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `jenis_syarat`
---
-ALTER TABLE `jenis_syarat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pekerjaan`

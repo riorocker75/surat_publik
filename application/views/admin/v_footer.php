@@ -131,6 +131,10 @@ $(document).ready(function() {
   $('#ditolak-tabel').DataTable();
   $('#diterima-tabel').DataTable();
 
+  $('#lain-review-tabel').DataTable();
+  $('#lain-ditolak-tabel').DataTable();
+  $('#lain-diterima-tabel').DataTable();
+
 
 });
 

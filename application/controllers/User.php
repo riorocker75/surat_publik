@@ -122,6 +122,14 @@ function arsip_surat(){
 	$data['total_tolak']=$this->m_dah->pilih_surat($id_penduduk,'ditolak','surat_mohon')->num_rows();
 	$data['total_review']=$this->m_dah->pilih_surat($id_penduduk,'review','surat_mohon')->num_rows();
 	
+
+	$data['surat_lain']=$this->m_dah->pilih_surat_lain_semua($id_penduduk,'jenis_mohon')->result();
+
+	// $data['surat_lain_review']=$this->m_dah->pilih_surat_lain($id_penduduk,'review','jenis_mohon')->result();
+	// $data['surat_lain_tolak']=$this->m_dah->pilih_surat_lain($id_penduduk,'ditolak','jenis_mohon')->result();
+	// $data['surat_lain_terima']=$this->m_dah->pilih_surat_lain($id_penduduk,'diterima','jenis_mohon')->result();
+
+
 	$this->load->view('admin/v_header');
 	$this->load->view('admin/data_opsi/v_arsip_user',$data);
 	$this->load->view('admin/v_footer');	

@@ -245,6 +245,13 @@ class M_dah extends CI_Model{
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' and status_surat='$status' order by nomor_surat desc");
 	}
 
+	function pilih_surat_lain($id_penduduk,$status,$table){
+		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' and status='$status' order by id desc");
+	}
+
+	function pilih_surat_lain_semua($id_penduduk,$table){
+		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' order by id desc");
+	}
 
 
 	function jenis_surat_user($jenis,$surat_mohon_id){
@@ -751,6 +758,30 @@ function status_login($nama){
 }
 
 
+function status_surat_lain($status){
+	switch ($status) {
+		case 'review':
+			echo "
+				<label class='labil labil-order'>Review</label>
+			";
+			break;
+		case 'diterima':
+
+		echo "
+				<label class='labil labil-success'>Diterima</label>
+			";
+
+		case 'ditolak':
+
+		echo "
+				<label class='labil labil-danger'>Ditolak</label>
+			";
+			break;
+		default:
+			# code...
+			break;
+	}
+}
 
 
 

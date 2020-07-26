@@ -15,7 +15,7 @@
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Jejak Pengajuan Surat </h6>
                     </div>
-                    <div class="card-body">
+                 <div class="card-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">
@@ -196,6 +196,65 @@
                     </div>
                 </div>
 		    </div>
+
+            <div class="col-lg-12 mb-4">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Jejak Pengajuan Surat Lain </h6>
+                    </div>
+               
+                  <div class="card-body">
+                     <!-- mulai bagian review tabel  -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="lain-review-tabel" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                <th width="2%">No</th>
+                                <th>Nomor Ajuan</th>
+                                <th>Jenis Surat</th>
+                                <th>Status</th>
+
+                                <th width="3%">Opsi</th>
+                                
+                                </tr>
+                            </thead> 
+                            <tbody>
+                               <?php $n=1; foreach ($surat_lain as $sl ) {?>
+                                   <?php 
+                                        $id_lain=array('id' => $sl->surat_id);
+                                        $ops=$this->m_dah->edit_data($id_lain,'jenis_surat')->result();
+                                        foreach ($ops as $op) { }
+                                   ?>
+                                   <tr>
+                                   <td><?php echo $n++;?></td>
+                               
+                                    <td><?php echo $sl->nomor_mohon_surat?></td>
+                                    <td><?php echo $op->nama_surat?></td>
+                                    <td>
+                                       <?php echo $this->m_dah->status_surat_lain($sl->status)?>
+                                    </td>
+
+                                 
+                                   
+                                    <td>
+                                    <a href=""></a>
+                                        <!-- <a href="<?php echo base_url().'admin/penduduk_delete/'.$sm->surat_mohon_id?>"> <i class="fas fa-trash-alt    "></i></a> -->
+                                        <!-- update role nya di model/m_dah.php -->
+                                   
+                                    </td>
+
+                                   </tr>
+
+                              <?php }?> 
+                            </tbody> 
+                            </table>
+                        </div>
+                        </div>
+
+                        <!-- end bagian tabel review -->
+                   </div> 
+
+             </div>
 
 
 
