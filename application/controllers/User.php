@@ -1898,6 +1898,72 @@ function update_notif($id){
 }
 
 
+function mohon_surat($id){
+ 	$this->load->database();
+ 	$where = array(
+	'id' => $id
+	);
+ 	$data['penduduk']=$this->m_dah->get_data('penduduk')->result();
+	
+	$id_user=$this->session->userdata('penduduk_id');
+	$where_user=array(
+		'id' => $id_user
+	);
+	$data['data_diri']=$this->m_dah->edit_data($where_user,'penduduk')->result();
+
+	
+    $data['surat'] = $this->m_dah->edit_data($where,'jenis_surat')->result();
+
+	$this->load->view('admin/v_header');
+	$this->load->view('admin/mohon_surat/v_aju_surat',$data);
+	$this->load->view('admin/v_footer');
+}
+
+function mohon_surat_act(){
+ 	$this->load->database();
+	$id_user=$this->session->userdata('penduduk_id');
+
+	$rand = rand(1000,9999);
+	
+	$kode_surat=$this->input->post('kode_surat');
+	$id_surat=$this->input->post('id_surat');
+
+	$kode_mohon=$kode_surat."-".$rand;
+
+
+	$data_sr= array(
+		'penduduk_id' => $id_user,
+		'surat_id' => $id_surat,
+		'kode_surat' => $kode_surat,
+		'tgl_ajukan' => date('Y-m-d'),
+		'nomor_mohon_surat' => $kode_mohon,
+		'status' => "review"
+	);
+	$this->m_dah->insert_data($data_sr,'jenis_mohon');
+	$id_terakhir = $this->db->insert_id();	
+
+	$config['upload_path'] = './upload/syarat/';
+	$config['allowed_types'] = 'jpg|png|jpeg|pdf';
+	if($_FILES["upload"]["name"]){
+		$rand1=rand(1000,9999);
+		$config['file_name'] = $rand1.'_'.$_FILES['upload']['name'];				
+		$this->load->library('upload', $config);
+		$upload = $this->upload->do_upload('upload');
+		if (!$upload){
+			$error = array('error' => $this->upload->display_errors());
+		}else{
+			$upload = $this->upload->data("file_name");
+			$data = array('upload_data' => $this->upload->data());
+			$this->m_dah->update_data(array('id' => $id_terakhir),array('upload' => $upload),'jenis_mohon');			
+		}
+	
+	}
+
+	redirect(base_url().'admin/sesi_surat/?alert=terkirim');
+
+
+}
+
 
 
 

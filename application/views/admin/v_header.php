@@ -97,6 +97,7 @@
             <h6 class="collapse-header">Semua Data Surat:</h6>
             <a class="collapse-item" href="<?php echo base_url().'admin/permohonan_surat'?>">Permohonan Surat</a>
             <a class="collapse-item" href="<?php echo base_url().'admin/arsip_surat'?>">Arsip Surat</a>
+            <a class="collapse-item" href="<?php echo base_url().'admin/data_surat'?>">Tambah Surat</a>
           
       </div>
       </li>

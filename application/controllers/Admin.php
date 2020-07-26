@@ -213,162 +213,8 @@ class Admin extends CI_Controller {
 	
 	
 
-	// menu
-	function menu(){
-		$this->load->database();
-		$data['mother'] = $this->m_dah->get_menu_mother()->result();		
-		$data['page'] = $this->m_dah->get_data('dah_pages')->result();
-		$data['category'] = $this->m_dah->get_data('dah_category')->result();
-		$this->load->view('admin/v_header');
-		$this->load->view('admin/v_menu',$data);
-		$this->load->view('admin/v_footer');
-	}
-
-	function menu_delete(){
-		$this->load->database();
-		$mother = $this->uri->segment('3');
-		if($mother == ""){
-			redirect('admin/menu');
-		}else{
-			$where = array(
-				'menu_mother' => $mother
-				);			
-			$this->m_dah->delete_data($where,'dah_menu');
-			redirect('admin/menu/?alert=menu-delete');
-		}
-	}
-
-	function menu_act(){
-		$this->load->database();
-		$this->form_validation->set_rules('menu','Menu Name','required');
-		if($this->form_validation->run() != true){
-			$data['mother'] = $this->m_dah->get_menu_mother()->result();
-			$data['page'] = $this->m_dah->get_data('dah_pages')->result();
-			$data['category'] = $this->m_dah->get_data('dah_category')->result();
-			$this->load->view('admin/v_header');
-			$this->load->view('admin/v_menu',$data);
-			$this->load->view('admin/v_footer');
-		}else{
-			$menu_mother = $this->input->post('menu');
-			$data = array(
-				'menu_mother' => create_slug($menu_mother),
-				'menu_name' => "0",
-				'menu_url' => "0",
-				'menu_parent' => "0",
-				'menu_sort' => "0"
-				);
-			$this->m_dah->insert_data($data,'dah_menu');
-			redirect('admin/menu/?alert=menu-saved');
-		}		
-	}
-
-	function menu_item_act(){
-		$this->load->database();
-		$this->form_validation->set_rules('menu_item_mother','Menu Item Mother','required');
-		$this->form_validation->set_rules('menu_item_name','Menu Item Name','required');
-		if($this->form_validation->run() != true){
-			$data['mother'] = $this->m_dah->get_menu_mother()->result();
-			$data['page'] = $this->m_dah->get_data('dah_pages')->result();
-			$data['category'] = $this->m_dah->get_data('dah_category')->result();
-			$this->load->view('admin/v_header');
-			$this->load->view('admin/v_menu',$data);
-			$this->load->view('admin/v_footer');
-		}else{
-			$menu_name = $this->input->post('menu_item_name');
-			$menu_mother = $this->input->post('menu_item_mother');
-			$menu_parent = $this->input->post('menu_item_parent');
-
-			$url_page = $this->input->post('menu_item_url_page');
-			$url_category = $this->input->post('menu_item_url_category');
-			$url_manual = $this->input->post('menu_item_url_manual');
-
-			if($url_page != ""){
-				$url = $url_page;
-			}else if($url_category != ""){
-				$url = $url_category;
-			}else{
-				$url = $url_manual;
-			}
-
-			$where = array(
-				'menu_mother' => $menu_mother
-				);
-
-			$jumlah_sama = $this->m_dah->edit_data($where,'dah_menu')->num_rows();
-			$sort = $jumlah_sama + 1;
-			$data = array(
-				'menu_mother' => $menu_mother,
-				'menu_name' => $menu_name,
-				'menu_url' => $url,
-				'menu_parent' => $menu_parent,
-				'menu_sort' => $sort
-				);
-			$this->m_dah->insert_data($data,'dah_menu');
-			redirect('admin/menu/?alert=menu-saved');
-		}		
-	}
-
-	function menu_item_delete($id){
-		$this->load->database();
-		$mother = $this->uri->segment('3');
-		if($id == ""){
-			redirect('admin/menu');
-		}else{
-			$where_update = array(
-				'menu_parent' => $id
-				);
-			$data_update = array(
-				'menu_parent' => "0"
-				);
-			$this->m_dah->update_data($where_update,$data_update,'dah_menu');
-
-			$where_delete = array(
-				'menu_id' => $id
-				);			
-			$this->m_dah->delete_data($where_delete,'dah_menu');
-			redirect('admin/menu/?alert=menu-delete');
-		}
-	}
-
-	function menu_item_edit($id){
-		$this->load->database();		
-		if($id == ""){
-			redirect('admin/menu');
-		}else{			
-			$where = array(
-				'menu_id' => $id
-				);
-			$data['edit'] = $this->m_dah->edit_data($where,'dah_menu')->result();			
-			$this->load->view('admin/v_header');
-			$this->load->view('admin/v_menu_edit',$data);
-			$this->load->view('admin/v_footer');
-		}
-	}
-
-	function menu_item_update(){
-		$this->load->database();	
-		$id = $this->input->post('id');
-		$name = $this->input->post('menu_item_name');
-		$url = $this->input->post('menu_item_url_manual');		
-		$where = array(
-				'menu_id' => $id
-				);
-		$this->form_validation->set_rules('menu_item_name','Menu Item Name','required');	
-		$this->form_validation->set_rules('menu_item_url_manual','Menu Item Url','required');	
-		if($this->form_validation->run() != false){
-			$data = array(
-				'menu_name' => $name,
-				'menu_url' => $url
-				);
-			$this->m_dah->update_data($where,$data,'dah_menu');
-			redirect('admin/menu/?alert=menu-saved');
-		}else{						
-			$data['edit'] = $this->m_dah->edit_data($where,'dah_menu')->result();			
-			$this->load->view('admin/v_header');
-			$this->load->view('admin/v_menu_edit',$data);
-			$this->load->view('admin/v_footer');
-		}
-	}
+	
+	
 	// end menu
 
 	// user
@@ -1484,7 +1330,8 @@ function pelayanan_surat_update(){
 function sesi_surat(){
 	$this->load->database();
 	$id_penduduk=$this->session->userdata('penduduk_id');
-
+	$data['surat']=$this->m_dah->get_data('jenis_surat')->result();	
+	
 	$data['surat_review']=$this->m_dah->pilih_surat($id_penduduk,'review','surat_mohon')->result();
 	$data['surat_tolak']=$this->m_dah->pilih_surat($id_penduduk,'ditolak','surat_mohon')->result();
 	$data['surat_terima']=$this->m_dah->pilih_surat($id_penduduk,'diterima','surat_mohon')->result();
@@ -1493,6 +1340,7 @@ function sesi_surat(){
 	$data['total_tolak']=$this->m_dah->pilih_surat($id_penduduk,'ditolak','surat_mohon')->num_rows();
 	$data['total_review']=$this->m_dah->pilih_surat($id_penduduk,'review','surat_mohon')->num_rows();
 	
+
 	$this->load->view('admin/v_header');
 	$this->load->view('admin/sesi_surat/surat_data',$data);
 	$this->load->view('admin/v_footer');
@@ -3666,6 +3514,122 @@ function delete_ket_cerai_arsip($id){
 |  end delete arsip surat
 ----------------------------*/
 	
+
+/*--------------------------
+|  Buat Penambahan Surat
+----------------------------*/
+
+	function data_surat(){
+		$this->load->database();
+		if($this->session->userdata('level') != "admin"){
+				redirect(base_url());
+			}
+
+		$data['surat']=$this->m_dah->get_data('jenis_surat')->result();
+		$this->load->view('admin/v_header');
+		$this->load->view('admin/tambah_surat/v_data_surat',$data);
+		$this->load->view('admin/v_footer');
+	}
+
+	function tambah_surat(){
+		$this->load->database();
+		if($this->session->userdata('level') != "admin"){
+				redirect(base_url().'admin/data_surat');
+			}
+
+		$this->load->view('admin/v_header');
+		$this->load->view('admin/tambah_surat/v_tambah_surat');
+		$this->load->view('admin/v_footer');
+	}
+
+
+	function tambah_surat_act(){
+		$this->load->database();
+		if($this->session->userdata('level') != "admin"){
+				redirect(base_url());
+			}
+		$nama = $this->input->post('nama');
+		$kode = $this->input->post('kode');
+		$syarat = $this->input->post('syarat');
+		$format = $this->input->post('format');
+
+
+		$this->form_validation->set_rules('nama','Nama','required');
+		$this->form_validation->set_rules('kode','Kode','required');
+		
+
+		if($this->form_validation->run() != true){
+			redirect('admin/tambah_surat');
+		}else{
+			$data= array(
+				'nama_surat' => $nama,
+				'kode_surat' => $kode,
+				'syarat_surat' => $syarat,
+				'format_surat' =>$format
+			);
+			$this->m_dah->insert_data($data,'jenis_surat');
+			redirect(base_url().'admin/data_surat');
+		}
+		
+	}
+
+
+	function tambah_surat_edit($id){
+		$this->load->database();
+		if($this->session->userdata('level') != "admin"){redirect(base_url());}
+		
+		if($id == ""){
+			redirect('admin/data_surat');
+		}else{			
+			$where = array(
+				'id' => $id
+				);	
+			$data['surat'] = $this->m_dah->edit_data($where,'jenis_surat')->result();
+			if(count($data['surat']) > 0){
+				$this->load->view('admin/v_header');
+				$this->load->view('admin/tambah_surat/v_edit_surat',$data);
+				$this->load->view('admin/v_footer');				
+			}else{
+				redirect(base_url().'admin/data_surat');				
+			}
+		}
+		
+	}
+
+	function tambah_surat_update(){
+		if($this->session->userdata('level') != "admin"){redirect(base_url());}
+
+		$this->load->database();		
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$kode = $this->input->post('kode');
+		$syarat = $this->input->post('syarat');
+		$format = $this->input->post('format');
+
+		$this->form_validation->set_rules('nama','Nama','required');
+		$this->form_validation->set_rules('kode','Kode','required');
+
+		if($this->form_validation->run() != true){
+			redirect('admin/tambah_surat_edit/'.$id);
+		}else{
+			$where=array(
+				'id' => $id
+			);
+			$data= array(
+				'nama_surat' => $nama,
+				'kode_surat' => $kode,
+				'syarat_surat' => $syarat,
+				'format_surat' =>$format
+			);
+			$this->m_dah->update_data($where,$data,'jenis_surat');			
+			
+			redirect(base_url().'admin/tambah_surat_edit/'.$id.'/?alert=update');
+		}
+		
+
+	}
+
+	// end tambah surat
 
 
     

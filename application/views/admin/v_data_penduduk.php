@@ -134,7 +134,7 @@
         <div class="card-body">
           <div class="float-right">
             <?php if ($this->session->userdata('level') == "admin") { ?>
-              <a href="<?php echo base_url() . 'admin/penduduk_add' ?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-user-plus" aria-hidden="true"></i> Tambah Data</a>
+              <a href="<?php echo base_url().'admin/penduduk_add' ?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-user-plus" aria-hidden="true"></i> Tambah Data</a>
             <?php } else {
             } ?>
           </div>
