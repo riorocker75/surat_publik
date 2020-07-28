@@ -11,7 +11,7 @@
 		<div class="row">
             <div class="col-lg-12 mb-4">
                 <div class="card shadow mb-4">
-                    <form action="<?php echo base_url().'admin/update_ktp_hilang_act'?>" method="post">
+                    <form action="<?php echo base_url().'admin/update_ktp_baru_act'?>" method="post">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Data Pengaju</h6>
                         
@@ -135,7 +135,7 @@
 
                                     </div>
 
-                                 <input type="hidden" name="surat_id" value="<?php echo $kh->surat_mohon_id?>">  
+                                 <input type="text"  name="surat_id" value="<?php echo $kh->surat_mohon_id?>" hidden>  
                                
                                  <div class="syarat">
                                         <div class="title-syarat">

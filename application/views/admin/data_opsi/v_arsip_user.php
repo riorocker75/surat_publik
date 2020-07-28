@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#diterima" role="tab" aria-controls="diterima" aria-selected="false">
-                        Di Terima <span class="labil labil-success count"><?php echo $total_terima;?></span>
+                        Selesai <span class="labil labil-success count"><?php echo $total_terima;?></span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -61,6 +61,7 @@
                                     <td>
                                         <label class="labil labil-order">
 
+                                         
                                             <?php echo  $sm->status_surat?>
                                         </label>
                                     </td>
@@ -113,8 +114,12 @@
                                     <td><?php echo $st->syarat?></td>
                                     <td>
                                         <label class="labil labil-success">
-
-                                            <?php echo  $st->status_surat?>
+                                            <?php 
+                                            if($st->status_surat == "diterima"){
+                                              echo "Selesai";
+                                            }
+                                            ?>
+                                           
                                         </label>
                                     </td>
 

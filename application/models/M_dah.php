@@ -772,7 +772,7 @@ function status_surat_lain($status){
 		case 'diterima':
 
 		echo "
-				<label class='labil labil-success'>Diterima</label>
+				<label class='labil labil-success'>Selesai</label>
 			";
 
 		case 'ditolak':

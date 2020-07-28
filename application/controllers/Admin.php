@@ -1111,7 +1111,10 @@ function struktur_jab_delete($id){
 		}else{
 			$where = array(
 				'id' => $id
-				);	
+				);
+			$where_user = array(
+				'penduduk_id' => $id
+				);		
 
 			$data=array(
 				'nik' => $this->input->post('nik'),
@@ -1139,7 +1142,13 @@ function struktur_jab_delete($id){
 				// 'alamat' => $this->input->post('alamat')
 
 			);
+
+			$data_u=array('user_name' => $this->input->post('nama'));
+
+			$this->m_dah->update_data($where_user,$data_u,'user');
+
 			$this->m_dah->update_data($where,$data,'penduduk');
+
 			redirect(base_url().'admin/data_pribadi/'.$id.'/?alert=update');
 
 		}
@@ -1926,8 +1935,9 @@ function delete_kk_kurang($id){
 				$data_ktp_baru=array(
 					'status_surat' => "ditolak"
 				);
-				$this->m_dah->update_data($where_s,$data_surat_mohon,'surat_mohon');
 				$this->m_dah->update_data($where_s,$data_ktp_baru,'sr_ktp_baru');
+				$this->m_dah->update_data($where_s,$data_surat_mohon,'surat_mohon');
+
 				redirect(base_url().'admin/permohonan_surat/?alert=update');
 			}
 		}
@@ -1948,7 +1958,6 @@ function delete_kk_kurang($id){
 					'tgl_surat' => date('Y-m-d'),
 					'syarat' => $ket_s,
 					'notif' => 2,
-
 					'status_surat' => "diterima"
 				);
 	
@@ -2078,7 +2087,6 @@ function delete_ktp_baru($id){
 					'tgl_surat' => date('Y-m-d'),
 					'syarat' => $ket_s,
 					'notif' => 2,
-
 					'status_surat' => "diterima"
 				);
 	
@@ -3644,6 +3652,20 @@ function delete_ket_cerai_arsip($id){
 
 	}
 
+
+		function tambah_surat_hapus($id){
+		$this->load->database();
+		if($this->session->userdata('level') != "admin"){redirect(base_url());}
+			if($id == ""){
+				redirect('base_url()');
+			}else{
+				$where = array(
+				'id' => $id
+				);
+			}	
+			$this->m_dah->delete_data($where,'jenis_surat');
+			redirect(base_url().'admin/data_surat/?alert=post-delete');
+	}
 	// end tambah surat
 
 	// update surat lain review

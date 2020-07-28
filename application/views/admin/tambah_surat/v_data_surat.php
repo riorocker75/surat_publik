@@ -32,7 +32,7 @@
                                 <th>Nama Surat</th>
                               
 
-                                <th width="9%">Opsi</th>
+                                <th width="15%">Opsi</th>
                                 
                                 </tr>
                             </thead> 
@@ -46,6 +46,11 @@
                                   <td>
                                     <a href="<?php echo base_url().'admin/tambah_surat_edit/'.$ds->id?>" >
                                      <i class="fa fa-pen"></i>
+                                    </a>
+                                    &nbsp;
+                                    
+                                      <a href="<?php echo base_url().'admin/tambah_surat_hapus/'.$ds->id?>" >
+                                     <i class="fa fa-trash"></i>
                                     </a>
                                    </td>
 
