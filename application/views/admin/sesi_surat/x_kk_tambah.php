@@ -94,6 +94,8 @@
                                              <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
                                                          <select class="form-control form-control-user" name="jk">
+                                                        <option value="">--Pilih Jenis Kelamin--</option>
+                                                        
                                                          <option value="pria">Laki-Laki</option>
                                                          <option value="wanita">Perempuan</option>
                                                          </select>
@@ -111,7 +113,7 @@
                                             <div class="form-group">
                                              <label for="">Agama</label>
                                              <select class="form-control form-control-user" name="agama" required="">
-                                    
+                                             <option value="">--Pilih Agama--</option>
                                                 <?php foreach ($agama as $ag) {?>
                                                      <option value="<?php echo $ag->agama?>"><?php echo $ag->agama?></option>
                                                     <?php }?>
@@ -121,7 +123,7 @@
                                             <div class="form-group">
                                                  <label for="">Pendidikan Terakhir</label>
                                                 <select class="form-control form-control-user" name="pendidikan">
-                                                    <option value="">Pilih atau kosongkan jika baru lahir</option>
+                                                    <option value="">--Pilih atau kosongkan jika baru lahir--</option>
                                                     <?php foreach($pendidikan as $pd){?> 
                                                     <option value="<?php echo $pd->pendidikan?>"><?php echo $pd->pendidikan?></option>
                                                     <?php }?>
@@ -131,7 +133,7 @@
                                              <div class="form-group">
                                                     <label for="">Pekerjaan</label>
                                                     <select class="form-control form-control-user" name="pekerjaan">
-                                                    <option value="">Pilih atau kosongkan jika baru lahir</option>
+                                                    <option value="">--Pilih atau kosongkan jika baru lahir--</option>
 
                                                     <?php foreach($pekerjaan as $pk){?> 
                                                         <option value="<?php echo $pk->pekerjaan?>"><?php echo $pk->pekerjaan?></option>
@@ -142,6 +144,8 @@
                                               <div class="form-group">
                                                 <label for="">Status Perkawinan</label>
                                                 <select class="form-control form-control-user" name="status_nikah">
+                                                    <option value="">--Pilih atau kosongkan jika baru lahir--</option>
+                                                   
                                                     <option value="menikah">Menikah</option>
                                                     <option value="belum_menikah">Belum Menikah</option>
                                                 </select>
