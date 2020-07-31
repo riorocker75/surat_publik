@@ -23,10 +23,10 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                               Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotokopi KK Lama</label>
+                                                        <label style="font-weight:800">Upload KK Lama Asli</label>
                                                         <input class="form-control-file" type="file" name="foto_kk" id="file_1" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_1"></div>
@@ -35,7 +35,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Scanan Surat keterangan meningal dunia dari Geuchik (jika meninggal)</label>
+                                                        <label style="font-weight:800">Upload Surat keterangan meningal dunia dari Geuchik (jika meninggal)</label>
                                                             <input class="form-control-file" type="file" name="ket_mati" id="file_2">
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -44,7 +44,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
                          
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Scanan Surat keterangan pindah dari Geuchik (jika pindah)</label>
+                                                        <label style="font-weight:800">Upload Surat keterangan pindah dari Geuchik (jika pindah)</label>
                                                             <input class="form-control-file" type="file" name="ket_pindah" id="file_3">
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -69,10 +69,10 @@
 
                                               <div class="form-group">
                                                 <label for="">Nomor KK</label>
-                                                <input type="text" class="form-control form-control-user"  name="no_kk" required>
+                                                <input class="form-control form-control-user"  name="no_kk" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16" required>
+                                            <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
                                                 
                                             </div>
-                                            <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
       
                                         </div>   
 

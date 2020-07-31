@@ -22,34 +22,64 @@
 </head>
 
 <body class="bg-gradient-primary">
+<!-- <body class=""> -->
 
   <div class="container">
 
     <!-- Outer Row -->
+
     <div class="row justify-content-center">
+
 
       <div class="col-xl-5 col-lg-12 col-md-8">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
+           
             <!-- Nested Row within Card Body -->
             <div class="row">
               <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
+               <div class="text-center" style="margin-top:20px;margin-bottom:-20px;width: 100%">
+              <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+             Selamat Datang 
+            </div>
+            
+            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+             Sistem Informasi Pelayanan
+            </div>
+          <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+              Administrasi Kependudukan
+            </div>
+
+            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+               Pada Desa Ulee Ceubrek 
+            </div>
+
+            <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+              Kecamatan Meurah Mulia 
+            </div>
+
+              <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+              Kabupaten Aceh Utara
+            </div>
+            </div>
+
               <div class="col-lg-12">
                 <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
-                  </div>
+               
                   <?php show_alert(); ?>
 
                   <form class="user" action="<?php echo base_url() . 'xlog/login_act' ?>" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="Masukan nik" name="uname">
+                      <!-- <label>Username atau Nik</label> -->
+
+                      <input type="text" class="form-control form-control-user" placeholder="Masukkan NIK Anda" name="uname">
                     </div>
                     <?php echo form_error('uname', '<div class="form-error">', '</div>'); ?>
 
                     <div class="form-group pass-cek">
-                      <input type="password" id="showPass" class="form-control form-control-user " name="pass" placeholder="Password">
+                      <!-- <label>Password</label> -->
+                      <input type="password" id="showPass" class="form-control form-control-user " name="pass" placeholder="Masukkan Password (NIK)">
                       <span class="icon-input-right checkPass"><i class="fa fa-eye" aria-hidden="true"></i></span>
 
                     </div>

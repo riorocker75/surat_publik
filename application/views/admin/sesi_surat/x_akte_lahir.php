@@ -21,7 +21,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                                Persyaratan 
                                             </div>  
                                                     <div class="form-group">
                                                         <label style="font-weight:800">Surat Keterangan Geuchik F-2-02 (Disediakan oleh Sekdes)</label>
@@ -30,7 +30,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy KTP kedua orang tua</label>
+                                                        <label style="font-weight:800">Upload Fotocopy KTP salah satu kedua orang tua</label>
                                                             <input class="form-control-file" type="file" name="ktp" id="file_2" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -39,7 +39,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
                                                     
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Kartu Keluarga (KK)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Kartu Keluarga (KK)</label>
                                                             <input class="form-control-file" type="file" name="foto_kopi_kk" id="file_3" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -48,7 +48,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
                                                    
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Surat kelahiran dari bidan/dokter (stempel basah)</label>
+                                                        <label style="font-weight:800">Upload Surat kelahiran dari bidan/dokter (stempel basah)</label>
                                                             <input class="form-control-file" type="file" name="ket_lahir" id="file_4" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_4"></div>
@@ -58,7 +58,7 @@
                                        
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Buku Nikah orang tua</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Buku Nikah orang tua</label>
                                                             <input class="form-control-file" type="file" name="buku_nikah" id="file_5" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_5"></div>
@@ -67,7 +67,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
                                        
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy ijazah (bagi yang sudah memiliki)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy ijazah (bagi yang sudah memiliki)</label>
                                                             <input class="form-control-file" type="file" name="ijazah" id="file_6">
                                                     </div>
                                                     <div class="file_show" id="file_show_6"></div>
@@ -82,7 +82,7 @@
 
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                Data Diri Orang Tua
+                                                Data Orang Tua
                                             </div>
                                             <?php 
                                              foreach($data_diri as $dr){}
@@ -155,7 +155,7 @@
 
                                         <div class="form-group">
                                             <label for="">Anak ke</label>
-                                            <input type="number" class="form-control form-control-user"  name="anak_ke" placeholder="isi dengan angka. misal :1" required>
+                                            <input type="number" class="form-control form-control-user"  name="anak_ke" placeholder="Contoh: 1" required>
                                             
                                         </div>
                                         <?php echo form_error('anak_ke', '<div class="form-error">', '</div>'); ?>
@@ -177,7 +177,7 @@
 
                                         <div class="form-group">
                                             <label for="">Tempat Lahir</label>
-                                            <input type="text" class="form-control form-control-user"  name="tempat_lahir" placeholder="Nama Kota/Kabupaten dimana ia lahir" required>
+                                            <input type="text" class="form-control form-control-user"  name="tempat_lahir" placeholder="Nama Kabupaten/Kota Lahir" required>
                                             
                                         </div>
                                         <?php echo form_error('tempat_lahir', '<div class="form-error">', '</div>'); ?>

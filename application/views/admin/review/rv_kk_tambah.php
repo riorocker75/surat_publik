@@ -35,7 +35,7 @@
 
                                         <div class="form-group">
                                             <label for="">Nomor KK</label>
-                                            <input type="text" class="form-control form-control-user" value="<?php echo $kh->no_kk ?>" disabled>
+                                            <input type="number" class="form-control form-control-user" value="<?php echo $kh->no_kk ?>" disabled>
                                         </div>
                                     </div>
                                     <!-- end data orang tua -->
@@ -45,7 +45,7 @@
                                         </div> 
 
                                            <?php 
-                                           $where_user=array('id' => $kh->penduduk_id);
+                                           $where_user=array('id' => $kh->anggota_id);
                                             $data_diri=$this->m_dah->edit_data($where_user, 'penduduk')->result();
                                             foreach($data_diri as $dd ){
                                             ?>
@@ -103,11 +103,6 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
                                             <?php }?>   
 
                                     </div>  
@@ -125,7 +120,7 @@
                                             </div>  
                                
                                                      <div class="form-group">
-                                                            <label style="font-weight:800">Fotocopy KK Lama</label><br>
+                                                            <label style="font-weight:800">KK Lama Asli</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                         </div>
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            

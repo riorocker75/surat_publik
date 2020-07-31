@@ -69,12 +69,26 @@
 					Di 
 				</div>
 				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
-					Sistem Informasi Pelayan Administrasi Kependudukan (SIPAK)
+					Sistem Informasi Pelayanan Administrasi Kependudukan
 				</div>
 				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
-					Desa ulee ceubrek kecamatan meurah mulia Kabupaten Aceh Utara
+					Pada
+				</div>
+
+				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+					Desa Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara
 				</div>
 					<br>
+					<div >
+						<img style="
+						width: 500px;max-width: 100%;  display: block;
+  						margin-left: auto;
+  						margin-right: auto;
+  						"
+						src="<?php echo base_url('/upload/sop.jpg')?>">
+
+					</div>
+					<br><br>
 				<div class="h5 mb-0 font-weight ">
 					<?php echo $this->m_dah->get_option('blog_welcome')?>
 				</div>

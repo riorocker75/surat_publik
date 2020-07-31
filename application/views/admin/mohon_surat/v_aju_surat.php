@@ -4,6 +4,7 @@
 <?php foreach($surat as $sr){}?>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Permohonan <?php echo $sr->nama_surat?></h1>
+  <a href="<?php echo base_url().'admin/sesi_surat'?>" class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
 </div>
 <?php show_alert(); ?>
 
@@ -13,12 +14,13 @@
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">Ajukan Permohonan </h6>
+
 				</div>
 				<div class="card-body">
 				<?php echo form_open_multipart('user/mohon_surat_act');?>	
 					
 					<div class="syarat">
-						<div class="title-syarat">File Persyaratan</div>
+						<div class="title-syarat">Persyaratan</div>
 						<div>
 							Persyaratan
 							<br>

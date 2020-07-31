@@ -72,11 +72,6 @@
                                             
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="">Alamat</label>
-                                            <input type="text" class="form-control form-control-user" value="<?php echo $ym->alamat?>" disabled>
-                                            
-                                        </div>
 
                                         <div class="form-group">
                                             <label for="">Hari / Tanggal Meninggal</label>
@@ -149,19 +144,19 @@
                                                   
 
                                             <div class="form-group">
-                                                <label for="">Surat keterangan dari rumah sakit</label><br>
+                                                <label for="">Surat keterangan dari rumah sakit bagi yang meninggal di Rumah Sakit</label><br>
                                                 <?php echo $this->m_dah->preview_file($kh->sk_rs)?>   
                                             </div>    
                                             <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
    
                                             <div class="form-group">
-                                                <label for="">Fotocopy KTP </label><br>
+                                                <label for="">Fotocopy KTP bagi yang sudah memiliki</label><br>
                                                 <?php echo $this->m_dah->preview_file($kh->foto_kopi_ktp)?>   
                                             </div>    
                                             <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
                                  
                                             <div class="form-group">
-                                                <label for="">Fotocopy Kartu Keluarga (KK)</label><br>
+                                                <label for="">Fotocopy KK</label><br>
                                                 <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                             </div>
                                             

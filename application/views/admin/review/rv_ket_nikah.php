@@ -72,11 +72,7 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
+                                               
                                             <?php }?>   
 
                                             <!-- end data suami -->
@@ -145,7 +141,7 @@
                                                 File Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label style="font-weight: 800">Fotocopy Kartu Keluarga (KK)</label><br>
+                                                        <label style="font-weight: 800">Fotocopy Kartu Keluarga</label><br>
                                                         <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                     </div>
 

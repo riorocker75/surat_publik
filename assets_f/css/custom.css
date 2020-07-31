@@ -258,3 +258,10 @@ Syarat mulai
 		display: none;
 	} */
 }
+
+.btn-custom{
+	padding: 15px 10px;
+	border-radius:4px;
+	color:#fff;
+	background-color: #43a047!important;
+}

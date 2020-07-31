@@ -13,7 +13,7 @@
             <div class="col-lg-12 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Data Umum</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="line-height:1.5!important">Data Umum Desa Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara</h6>
                     </div>
                     <div class="card-body">
                     <?php echo $this->m_dah->get_option('umum'); ?>

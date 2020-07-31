@@ -23,15 +23,15 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                                Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Formulir F-1-06 dari Geuchik (disediakan oleh Sekdes)</label>
+                                                        <label style="font-weight:800">Formulir F-1-06 dari Geuchik (Disediakan Oleh Sekdes)</label>
                                                     </div>
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotokopi KK Lama</label>
+                                                        <label style="font-weight:800">Upload KK Lama Asli</label>
                                                         <input class="form-control-file" type="file" name="foto_kk" id="file_1" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_1"></div>
@@ -40,7 +40,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                       <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy KTP (Calon Kepala Keluarga)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy KTP (Calon Kepala Keluarga)</label>
                                                         <input class="form-control-file" type="file" name="ktp" id="file_2" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -49,7 +49,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                      <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy buku nikah (bagi yang sudah menikah)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Buku Nikah (bagi yang sudah menikah)</label>
                                                         <input class="form-control-file" type="file" name="buku_nikah" id="file_3" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -59,7 +59,7 @@
 
                          
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy akta kelahiran anggota keluarga</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Akta Kelahiran Anggota Keluarga</label>
                                                             <input class="form-control-file" type="file" name="akte_lahir" id="file_4" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_4"></div>
@@ -95,7 +95,7 @@
 
                                              <div class="form-group">
                                                 <label for="">Nomor KK Lama</label>
-                                                <input type="text" class="form-control form-control-user"  name="no_kk" required>
+                                                <input type="text" class="form-control form-control-user"  maxlength="16"  minlength="16" name="no_kk" required>
                                                 
                                             </div>
                                             <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
@@ -106,19 +106,19 @@
 
                                            <div class="syarat">
                                                 <div class="title-syarat">
-                                                    Data Keluarga yang ditambahkan
+                                                    Data Keluarga Yang Ditambahkan
                                                 </div> 
                                        
                                              <div class="form-group">
                                                 <label for="">Jumlah Anggota Keluarga</label>
-                                                <input type="text" class="form-control form-control-user"  name="jumlah_anggota" required>
+                                                <input type="number" class="form-control form-control-user"  name="jumlah_anggota"  required>
                                                 
                                             </div>
                                             <?php echo form_error('jumlah_anggota', '<div class="form-error">', '</div>'); ?>
                                             
                                               <div class="form-group">
-                                                <label for="">Nama dan Nik </label>
-                                                <textarea class="form-control form-control-user" name="nama_nik" placeholder="misal: budi 1203849, fulan 120293837, fahmi 301928837"></textarea>
+                                                <label for="">Nama dan NIK </label>
+                                                <textarea class="form-control form-control-user" name="nama_nik" placeholder="Contoh: Budi 1234567890123456, Adi 6543211234567890"></textarea>
                                                     
                                                 
                                             </div>

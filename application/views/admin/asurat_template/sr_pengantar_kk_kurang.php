@@ -84,7 +84,7 @@ II. DATA INDIVIDU PENGURANGAN
 
         <tr>
             <td>Status Perkawinan</td>
-            <td>:&nbsp;<?php echo $dr->status_nikah?></td>
+            <td>:&nbsp;<?php echo $this->m_dah->cek_nikah($dr->status_nikah)?></td>
         </tr>
 
         <tr>

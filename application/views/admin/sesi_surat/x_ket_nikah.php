@@ -21,10 +21,10 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                                Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Kartu Keluarga (KK)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Kartu Keluarga (KK)</label>
                                                             <input class="form-control-file" type="file" name="foto_kk" id="file_1" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_1"></div>
@@ -34,7 +34,7 @@
 
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy KTP Suami</label>
+                                                        <label style="font-weight:800">Upload Fotocopy KTP Suami</label>
                                                             <input class="form-control-file" type="file" name="ktp_suami" id="file_2" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -43,7 +43,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
                                        
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy KTP Istri</label>
+                                                        <label style="font-weight:800">Upload Fotocopy KTP Istri</label>
                                                             <input class="form-control-file" type="file" name="ktp_istri" id="file_3" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -52,7 +52,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Buku Nikah</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Buku Nikah</label>
                                                             <input class="form-control-file" type="file" name="buku_nikah" id="file_4" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_4"></div>

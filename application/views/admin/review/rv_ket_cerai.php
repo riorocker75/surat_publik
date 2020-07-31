@@ -72,11 +72,7 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
+                                              
                                             <?php }?>   
 
                                             <!-- end data suami -->
@@ -145,19 +141,19 @@
                                                 File Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label style="font-weight: 800">Fotocopy Kartu Keluarga (KK)</label><br>
+                                                        <label style="font-weight: 800">Fotocopy Kartu Keluarga</label><br>
                                                         <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                     </div>
 
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
                                                         <div class="form-group">
-                                                            <label style="font-weight: 800">Fotocopy KTP Suami</label><br>
+                                                            <label style="font-weight: 800">Fotocopy KTP Laki-Laki</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->ktp_suami)?>   
                                                         </div>
 
                                                          <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
                                                         <div class="form-group">
-                                                            <label style="font-weight: 800">Fotocopy KTP Istri</label><br>
+                                                            <label style="font-weight: 800">Fotocopy KTP Perempuan</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->ktp_istri)?>   
                                                         </div>
 

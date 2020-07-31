@@ -49,7 +49,7 @@ function show_alert(){
 			echo "<div class='text-center alert alert-danger alert-dah'>Login gagal !<br/>periksa username & password kamu.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}	
 		else if($alert == "terkirim"){
-			echo "<div class='text-center alert alert-success alert-dah'>Permohonan Surat Anda sudah masuk ke Sekretaris Desa, Bersabar untuk menunggu kabar selanjutnya<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>Permohonan Surat Anda  Berhasil Diajukan Ke Sekretaris Desa, Mohon Bersabar Untuk Menunggu Status Suratnya<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}	
 
 	}

@@ -29,7 +29,7 @@
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#diterima" role="tab" aria-controls="profile" aria-selected="false">
-                             Di Terima <span class="labil labil-success count"><?php echo $total_terima;?></span>
+                             Selesai <span class="labil labil-success count"><?php echo $total_terima;?></span>
                           </a>
                         </li>
 
@@ -167,9 +167,13 @@
                                       </td>
                                     <td><?php echo $sdtr->ket_surat?></td>
                                     <td>
-                                        <label class="labil labil-order">
+                                        <label class="labil labil-success">
 
-                                            <?php echo  $sdtr->status_surat?>
+                                           <?php
+                                            if( $sdtr->status_surat == "diterima"){
+                                              echo "Selesai"
+                                            }
+                                           ?>
                                         </label>
                                     </td>
 

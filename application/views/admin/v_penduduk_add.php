@@ -19,14 +19,14 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">NIK</label>
-                                    <input type="number" class="form-control form-control-user check-nik" name="nik" maxlength="16">
+                                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control form-control-user check-nik" name="nik" minlength="16" maxlength="16">
                                      <?php echo form_error('nik', '<div class="form-error">', '</div>'); ?>
                                     <span class="check-nik-output"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">No. Kartu Keluarga</label>
-                                    <input type="number" class="form-control form-control-user" name="no_kk">
+                                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control form-control-user" name="no_kk"  maxlength="16"  minlength="16" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nama Lengkap</label>
@@ -96,7 +96,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Nomor Hp/Telp</label>
-                                    <input type="text" class="form-control form-control-user" name="no_hp" >
+                                    <input type="text" class="form-control form-control-user" name="no_hp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="15">
                                 </div>
 
                                 <div class="form-group">
@@ -124,9 +124,11 @@
                                     <label for="">Status Perkawinan</label>
                                     <select class="form-control form-control-user" name="status_nikah">
                                        <option value="">--Pilih Status Menikah--</option>
-                                        
-                                        <option value="menikah">Menikah</option>
+                                       
                                         <option value="belum_menikah">Belum Menikah</option>
+                                        <option value="menikah">Menikah</option>
+                                        <option value="cerai_hidup">Cerai Hidup</option>
+                                        <option value="cerai_mati">Cerai Mati</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -160,7 +162,7 @@
 
                                  <div class="form-group">
                                     <label for="">Kelurahan / Desa</label>
-                                    <input type="text" class="form-control form-control-user" name="desa" >
+                                    <input type="text" class="form-control form-control-user" name="desa" value="Ulee Ceubrek" disabled>
                                  </div> 
 
                                 <div class="form-group">

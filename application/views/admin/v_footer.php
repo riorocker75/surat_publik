@@ -111,6 +111,8 @@
   </script>
   <!-- end hapus foto dev -->
 <!-- akhir modal hapus -->
+
+<!-- manggil ckeditor -->
 <script type="text/javascript">
      CKEDITOR.replace('editor1');
 </script>

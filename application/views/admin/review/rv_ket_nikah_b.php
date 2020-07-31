@@ -68,11 +68,6 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
                                             <?php }?>   
 
                                     </div>  
@@ -89,13 +84,13 @@
                                                 File Persyaratan 
                                             </div>  
                                                     <div class="form-group">
-                                                        <label for="">Fotocopy Kartu Keluarga (KK)</label><br>
+                                                        <label for="">Fotocopy Kartu Keluarga</label><br>
                                                         <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                     </div>
 
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
                                                         <div class="form-group">
-                                                            <label for="">Fotocopy KTP</label><br>
+                                                            <label for="">Fotocopy KTP bagi yang sudah memiliki</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->foto_kopi_ktp)?>   
                                                         </div>
 

@@ -22,12 +22,12 @@
                                     <label for="">NIK</label>
                                     <input type="hidden" class="form-control form-control-user" name="id" value="<?php echo $pdk->id?>">
 
-                                    <input type="number" class="form-control form-control-user" name="nik" value="<?php echo $pdk->nik?>" maxlength="16" required>
+                                    <input type="number" oninput="javascript: if (this.value.length > this.minLength) this.value = this.value.slice(0, this.minLength);" class="form-control form-control-user" name="nik" value="<?php echo $pdk->nik?>" minlength="16" maxlength="16"  required>
                                      <?php echo form_error('nik', '<div class="form-error">', '</div>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="">No. Kartu Keluarga</label>
-                                    <input type="number" class="form-control form-control-user" name="no_kk" value="<?php echo $pdk->nomor_kk?>">
+                                    <input type="number" oninput="javascript: if (this.value.length > this.minLength) this.value = this.value.slice(0, this.minLength);" class="form-control form-control-user" name="no_kk" value="<?php echo $pdk->nomor_kk?>" minlength="16" maxlength="16" >
                                     <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
 
                                 </div>
@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <label for="">Kewarganegaraan</label>
                                     <select class="form-control form-control-user" name="warga_negara">
-                                    <option value="<?php echo $pdk->status_warga_negara?>" selected hidden><?php echo ucfirst($pdk->status_warga_negara)?></option>
+                                    <option value="<?php echo $pdk->status_warga_negara?>" selected hidden><?php echo $this->m_dah->cek_wn($pdk->status_warga_negara)?></option>
                                    
                                     <option value="wni">Warga Negara Indonesia (WNI)</option>
                                     <option value="wna">Warga Negara Asing (WNA)</option>
@@ -90,7 +90,7 @@
                                 <div class="form-group">
                                     <label for="">Golongan Darah</label>
                                     <select class="form-control form-control-user" name="gol_darah">
-                                    <option value="<?php echo $pdk->gol_darah?>" selected hidden><?php echo $pdk->gol_darah?></option>
+                                    <option value="<?php echo $pdk->gol_darah?>" selected hidden><?php echo $this->m_dah->status_darah($pdk->gol_darah)?></option>
                                         
                                         <option value="a">Golongan Darah (A)</option>
                                         <option value="b">Golongan Darah (B)</option>
@@ -104,7 +104,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Nomor Hp/Telp</label>
-                                    <input type="number" class="form-control form-control-user" name="no_hp" value="<?php echo $pdk->no_hp?>">
+                                    <input type="number" class="form-control form-control-user" name="no_hp" value="<?php echo $pdk->no_hp?>" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="15">
                                 </div>
 
                                 <div class="form-group">
@@ -131,10 +131,11 @@
                                 <div class="form-group">
                                     <label for="">Status Perkawinan</label>
                                     <select class="form-control form-control-user" name="status_nikah">
-                                        <option value="<?php echo $pdk->status_nikah?>" selected hidden><?php echo ucfirst($pdk->status_nikah)?></option>
-                                        
-                                        <option value="menikah">Menikah</option>
+                                        <option value="<?php echo $pdk->status_nikah?>" selected hidden><?php echo  $this->m_dah->cek_nikah($pdk->status_nikah)?></option>
                                         <option value="belum_menikah">Belum Menikah</option>
+                                        <option value="menikah">Menikah</option>
+                                        <option value="cerai_hidup">Cerai Hidup</option>
+                                        <option value="cerai_mati">Cerai Mati</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -167,7 +168,7 @@
 
                                  <div class="form-group">
                                     <label for="">Kelurahan / Desa</label>
-                                    <input type="text" class="form-control form-control-user" name="desa" value="<?php echo $pdk->desa?>">
+                                    <input type="text" class="form-control form-control-user" name="desa" value="Ulee Ceubrek" disabled>
                                  </div> 
 
                                  

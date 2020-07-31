@@ -21,7 +21,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                               Persyaratan 
                                             </div>  
 
                                                <div class="form-group">
@@ -36,7 +36,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Kartu Keluarga (KK)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Kartu Keluarga (KK)</label>
                                                             <input class="form-control-file" type="file" name="foto_kk" id="file_1" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_1"></div>
@@ -46,7 +46,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy surat nikah bagi yang belum umur 17 tahun sudah kawin atau pernah kawin (memperlihatkan yang asli)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy surat nikah bagi yang belum umur 17 tahun sudah kawin atau pernah kawin (memperlihatkan yang asli)</label>
                                                             <input class="form-control-file" type="file" name="surat_nikah" id="file_2">
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -56,7 +56,7 @@
                                        
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy Akta kelahiran/ijazah</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Akta kelahiran/Ijazah Terakhir</label>
                                                             <input class="form-control-file" type="file" name="akte_lahir" id="file_3" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -68,6 +68,7 @@
                                         <!-- akhir persyaratan --> 
 
                                         <!-- data diri orang tua -->
+                                            <?php foreach($data_diri as $dd ){?>
 
                                            <div class="syarat">
                                                 <div class="title-syarat">
@@ -76,14 +77,14 @@
 
                                                  <div class="form-group">
                                                     <label for="">Nama Ayah</label>
-                                                    <input type="text" class="form-control form-control-user" name="ayah" required>
+                                                    <input type="text" class="form-control form-control-user" name="ayah" value="<?php echo $dd->nama_ayah ?>" required>
                                                     <?php echo form_error('ayah', '<div class="form-error">', '</div>'); ?>
                                                    
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="">Nama Ibu</label>
-                                                    <input type="text" class="form-control form-control-user" name="ibu" required>
+                                                    <input type="text" class="form-control form-control-user" name="ibu" value="<?php echo $dd->nama_ibu ?>" required>
                                                     <?php echo form_error('ibu', '<div class="form-error">', '</div>'); ?>
                                                 </div>
                                         </div>
@@ -95,7 +96,6 @@
                                                 Data Diri 
                                             </div>
 
-                                            <?php foreach($data_diri as $dd ){?>
                                                 <div class="form-group">
                                                     <label for="">Nama</label>
                                                     <input type="text" class="form-control form-control-user" value="<?php echo $dd->nama?>" disabled>
@@ -138,14 +138,11 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
-                                            <?php }?>       
+                                               
+
                                         </div>
                                         <!-- end data diri-->
+                                            <?php }?>       
                                 
                                 </div>
                             </div>	

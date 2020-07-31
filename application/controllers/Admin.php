@@ -893,7 +893,8 @@ function struktur_jab_delete($id){
 	function penduduk_act(){
 		$this->load->database();
 
-		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|is_unique[penduduk.nik]|max_length[16]');
+		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|is_unique[penduduk.nik]|max_length[16]|min_length[16]');
+		$this->form_validation->set_rules('no_kk','Nomor Kartu Keluarga','required|max_length[16]|min_length[16]');
 		$this->form_validation->set_rules('nama','Nama','required');
 		
 		if($this->form_validation->run() != true){
@@ -924,7 +925,7 @@ function struktur_jab_delete($id){
 				'status_nikah' => $this->input->post('status_nikah'),
 				'status_hub_keluarga' => $this->input->post('status_hub_keluarga'),
 				'dusun' => $this->input->post('dusun'),
-				'desa' => $this->input->post('desa'),
+				'desa' => "Ulee Ceubrek",
 				'kecamatan' => "Meurah Mulia",
 				'kabupaten' => "Aceh Utara",
 				'provinsi' =>"Aceh",
@@ -987,10 +988,10 @@ function struktur_jab_delete($id){
 		$this->load->database();		
 
 		$id = $this->input->post('id');
-		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|edit_unique[penduduk.nik.'.$id.']|max_length[16]');
-
-		$this->form_validation->set_rules('nama','Nama','required');
 		
+		$this->form_validation->set_rules('nama','Nama','required');
+		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|edit_unique[penduduk.nik.'.$id.']|max_length[16]|min_length[16]');
+		$this->form_validation->set_rules('no_kk','Nomor Kartu Keluarga','required|max_length[16]|min_length[16]');
 		if($this->form_validation->run() != true){
 			$where = array(
 				'id' => $id
@@ -1026,9 +1027,9 @@ function struktur_jab_delete($id){
 				'pekerjaan' => $this->input->post('pekerjaan'),
 				'status_nikah' => $this->input->post('status_nikah'),
 				'status_hub_keluarga' => $this->input->post('status_hub_keluarga'),
-				'kelurahan' => $this->input->post('kelurahan'),
+				
 				'dusun' => $this->input->post('dusun'),
-				'desa' => $this->input->post('desa'),
+				'desa' => "Ulee Ceubrek",
 				'kecamatan' => "Meurah Mulia",
 				'kabupaten' => "Aceh Utara",
 				'provinsi' =>"Aceh",
@@ -1036,6 +1037,15 @@ function struktur_jab_delete($id){
 				// 'alamat' => $this->input->post('alamat'),
 
 			);
+
+			$where_user = array(
+				'penduduk_id' => $id
+				);
+			$data_user=array(
+				'user_name'=> $this->input->post('nama')
+			);
+			$this->m_dah->update_data($where_user,$data_user,'user');
+
 			$this->m_dah->update_data($where,$data,'penduduk');
 			redirect(base_url().'admin/penduduk/?alert=update');
 
@@ -1092,7 +1102,9 @@ function struktur_jab_delete($id){
 		$this->load->database();		
 
 		$id = $this->input->post('id');
-		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|edit_unique[penduduk.nik.'.$id.']|max_length[16]');
+		$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|edit_unique[penduduk.nik.'.$id.']|max_length[16]|min_length[16]');
+		$this->form_validation->set_rules('no_kk','Nomor Kartu Keluarga','required|max_length[16]|min_length[16]');
+
 		$this->form_validation->set_rules('nama','Nama','required');
 		
 		if($this->form_validation->run() != true){
@@ -1134,7 +1146,7 @@ function struktur_jab_delete($id){
 				'status_nikah' => $this->input->post('status_nikah'),
 				'status_hub_keluarga' => $this->input->post('status_hub_keluarga'),
 				'dusun' => $this->input->post('dusun'),
-				'desa' => $this->input->post('desa'),
+				'desa' => "Ulee Ceubrek",
 				'kecamatan' => "Meurah Mulia",
 				'kabupaten' => "Aceh Utara",
 				'provinsi' =>"Aceh",

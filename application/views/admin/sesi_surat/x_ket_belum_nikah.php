@@ -21,7 +21,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                                Persyaratan 
                                             </div>  
                                                     <div class="form-group">
                                                         <label style="font-weight:800">Upload Fotocopy Kartu Keluarga (KK)</label>
@@ -89,11 +89,7 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
+                                               
                                             <?php }?>       
                                         </div>
                                         <!-- end data diri-->

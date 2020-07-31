@@ -100,13 +100,7 @@ II. DATA INDIVIDU PENAMBAHAN
 
         <tr>
             <td>Status Perkawinan</td>
-            <td>:&nbsp;<?php
-                if($dr->status_nikah == "menikah"){
-                    echo "Menikah";
-                }else{
-                    echo "Belum Menikah";
-                }
-            ?></td>
+            <td>:&nbsp;<?php echo $this->m_dah->cek_nikah($dr->status_nikah); ?></td>
         </tr>
 
         <tr>

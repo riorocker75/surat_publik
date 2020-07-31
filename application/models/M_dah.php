@@ -787,7 +787,59 @@ function status_surat_lain($status){
 	}
 }
 
+function cek_wn($status){
+	switch ($status) {
+		case 'wni':
+			echo "Warga Negara Indonesia (WNI)";
+			break;
+		case 'wna':
+			echo "Warga Negara Asing (WNA)";
+			break;
+		default:
+			# code...
+			break;
+	}
+}
 
+	function cek_nikah($status){
+		switch ($status) {
+			case 'menikah':
+				echo "Menikah";
+				break;
+			case 'belum_menikah':
+				echo "Belum Menikah";
+				break;	
+			case 'cerai_hidup':
+				echo "Cerai Hidup";
+				break;
+			case 'cerai_mati':
+				echo "Cerai Mati";
+				break;
+			default:
+				# code...
+				break;
+		}
+	}
+
+	function status_darah($status){
+		switch ($status) {
+			case 'a':
+				echo "Golongan Darah (A)";
+				break;
+			case 'b':
+				echo "Golongan Darah (B)";
+				break;	
+			case 'ab':
+				echo "Golongan Darah (AB)";
+				break;
+			case 'o':
+				echo "Golongan Darah (O)";
+				break;
+			default:
+				# code...
+				break;
+		}
+	}
 
 }
 ?>

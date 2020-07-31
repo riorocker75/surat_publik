@@ -23,7 +23,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                                Persyaratan 
                                             </div>  
                                                     <div class="form-group">
                                                         <label style="font-weight:800">Formulir F-1-03 dari Geuchik (disediakan oleh Sekdes)</label>
@@ -31,7 +31,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotokopi KK Lama</label>
+                                                        <label style="font-weight:800">Upload KK Lama Asli</label>
                                                         <input class="form-control-file" type="file" name="foto_kk" id="file_1" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_1"></div>
@@ -42,7 +42,7 @@
                                                    
                          
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Fotocopy akta kelahiran (khusus anggota yang ditambah)</label>
+                                                        <label style="font-weight:800">Upload Fotocopy Akta Kelahiran (khusus anggota yang ditambah)</label>
                                                             <input class="form-control-file" type="file" name="akte_lahir" id="file_2" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -67,10 +67,10 @@
 
                                               <div class="form-group">
                                                 <label for="">Nomor KK</label>
-                                                <input type="text" class="form-control form-control-user"  name="no_kk" required>
+                                                <input type="number" class="form-control form-control-user"  name="no_kk" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16"  required>
+                                            <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
                                                 
                                             </div>
-                                            <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
       
                                         </div>   
 
@@ -78,7 +78,7 @@
                                                 <div class="title-syarat">
                                                     Data Individu Penambahan KK
                                                 </div> 
-
+                                                <input type="text" name="id_user" value="<?php echo $this->session->userdata('penduduk_id') ?>" hidden>
                                                 <div class="form-group">
                                                      <label for="">Nama </label>
                                                      <input type="text" class="form-control form-control-user" name="nama" required>
@@ -87,9 +87,10 @@
                                        
                                                  <div class="form-group">
                                                         <label for="">NIK</label>
-                                                        <input type="text" class="form-control form-control-user" name="nik" >
-                                                </div>
+                                                        <input type="number" class="form-control form-control-user" name="nik" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16">
                                                 <?php echo form_error('nik', '<div class="form-error">', '</div>'); ?>
+                                                
+                                                </div>
 
                                              <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
@@ -145,15 +146,30 @@
                                                 <label for="">Status Perkawinan</label>
                                                 <select class="form-control form-control-user" name="status_nikah">
                                                     <option value="">--Pilih atau kosongkan jika baru lahir--</option>
-                                                   
-                                                    <option value="menikah">Menikah</option>
                                                     <option value="belum_menikah">Belum Menikah</option>
+                                                    <option value="menikah">Menikah</option>
+                                                 <option value="cerai_hidup">Cerai Hidup</option>
+                                                 <option value="cerai_mati">Cerai Mati</option>
+
                                                 </select>
                                              </div>
 
                                              <div class="form-group">
                                                 <label for="">Status Dalam Keluarga</label>
-                                                <input class="form-control form-control-user" name="hub_kel" placeholder="misal : Anak">
+                                                  <select class="form-control form-control-user" name="hub_kel" required>
+                                                      <option value="">--Pilih Status Dalam Keluarga--</option>
+
+                                                      <option value="kepala">Kepala Keluarga</option>
+                                                      <option value="istri">Isteri</option>
+                                                      <option value="anak">Anak</option>
+                                                      <option value="menantu">Menantu</option>
+                                                      <option value="cucu">Cucu</option>
+                                                      <option value="orangtua">Orang Tua</option>
+                                                      <option value="mertua">Mertua</option>
+                                                      <option value="famili">Famili Lain</option>
+                                                      <option value="pembantu">Pembantu</option>
+                                                      <option value="lain">Lainya</option>
+                                                  </select>
                                             </div>
 
 

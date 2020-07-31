@@ -82,7 +82,7 @@
 
             ?>
             <div class="col mr-4" style="margin-left:20px">
-              TGK Dikulam
+              Tgk Dikulam
               <div class="text-white-50"><?php echo $this->m_dah->dusun_total('dikulam')->num_rows() ?> Orang</div>
               <span style="font-size: 12px">Pria: <?php echo $this->m_dah->dusun_total_jk('dikulam', 'pria')->num_rows() ?></span>
               <span>|</span>
@@ -126,7 +126,7 @@
     <?php show_alert() ?>
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Data Penduduk</h6>
+          <h6 class="m-0 font-weight-bold text-primary" style="line-height: 1.5">Data Penduduk Desa Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara</h6>
 
 
         </div>

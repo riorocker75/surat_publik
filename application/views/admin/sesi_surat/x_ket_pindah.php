@@ -21,7 +21,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                               Persyaratan 
                                             </div>  
 
                                                     <div class="form-group">

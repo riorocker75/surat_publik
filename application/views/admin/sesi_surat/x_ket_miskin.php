@@ -21,7 +21,7 @@
                                 <div class="col-lg-6 col-md-12 col-12">
                                         <div class="syarat">
                                             <div class="title-syarat">
-                                                File Persyaratan 
+                                              Persyaratan 
                                             </div>  
                                                     <div class="form-group">
                                                         <label for="">Upload Fotocopy Kartu Keluarga (KK)</label>
@@ -45,6 +45,7 @@
                                         </div>
                                         <!-- akhir persyaratan --> 
 
+                                            <?php foreach($data_diri as $dd ){?>
                                         
                                          <!-- data orang tua -->
                                          <div class="syarat">
@@ -54,12 +55,12 @@
 
                                                 <div class="form-group">
                                                     <label for="">Nama Ayah</label>
-                                                    <input type="text" class="form-control form-control-user" name="ayah" required>
+                                                    <input type="text" class="form-control form-control-user" name="ayah" value="<?php echo $dd->nama_ayah ?>" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="">Nama Ibu</label>
-                                                    <input type="text" class="form-control form-control-user" name="ibu" required>
+                                                    <input type="text" class="form-control form-control-user" name="ibu" value="<?php echo $dd->nama_ibu ?>" required>
                                                 </div>
                                          </div>   
                                          <!-- end data orang tua -->
@@ -70,7 +71,6 @@
                                                 Data Diri 
                                             </div>
 
-                                            <?php foreach($data_diri as $dd ){?>
                                                 <div class="form-group">
                                                     <label for="">Nama</label>
                                                     <input type="text" class="form-control form-control-user" value="<?php echo $dd->nama?>" disabled>
@@ -107,14 +107,11 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
-                                            <?php }?>       
+                                              
                                         </div>
                                         <!-- end data diri-->
+                                            <?php }?>       
+
 
                                 
                                 </div>

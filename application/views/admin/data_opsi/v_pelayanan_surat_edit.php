@@ -12,7 +12,8 @@
         <div class="col-lg-12 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Surat </h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="line-height:1.5!important">Jenis Surat Yang Dapat Dilayani</h6>
+                    
                 </div>
                 <div class="card-body">
                     <form action="<?php echo base_url() . 'admin/pelayanan_surat_update' ?>" method="post">

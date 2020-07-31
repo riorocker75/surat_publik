@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <label for="">Kewarganegaraan</label>
                                     <select class="form-control form-control-user" disabled>
-                                        <option value=""> <?php echo $pd->status_warga_negara ?></option>
+                                        <option value=""> <?php echo $this->m_dah->cek_wn($pd->status_warga_negara) ?></option>
 
 
                                     </select>
@@ -88,7 +88,7 @@
                                 <div class="form-group">
                                     <label for="">Golongan Darah</label>
                                     <select class="form-control form-control-user" disabled>
-                                        <option value=""> <?php echo $pd->gol_darah ?></option>
+                                        <option value=""> <?php echo $this->m_dah->status_darah($pd->gol_darah) ?></option>
 
                                     </select>
                                 </div>
@@ -117,13 +117,13 @@
                                 <div class="form-group">
                                     <label for="">Status Perkawinan</label>
                                     <select class="form-control form-control-user" name="status_nikah" disabled>
-                                        <option value="<?php echo $pk->status_nikah ?>"><?php echo $pd->pekerjaan ?></option>
+                                        <option value="<?php echo $this->m_dah->cek_nikah($pk->status_nikah) ?>"><?php echo $pd->pekerjaan ?></option>
 
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Status Dalam Keluarga</label>
-                                    <input class="form-control form-control-user" name="status_hub_keluarga" value="<?php echo $pd->status_hub_keluarga ?>" disabled>
+                                    <input class="form-control form-control-user" name="status_hub_keluarga" value="<?php echo $this->m_dah->status_keluarga($pd->status_hub_keluarga) ?>" disabled>
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="">Kelurahan</label>
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Dusun</label>
-                                    <input type="text" class="form-control form-control-user" name="dusun" value="<?php echo $pd->dusun ?>" disabled>
+                                    <input type="text" class="form-control form-control-user" name="dusun" value="<?php echo $this->m_dah->cek_dusun($pd->dusun) ?>" disabled>
                                 </div>
 
                                 

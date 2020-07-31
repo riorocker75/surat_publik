@@ -324,103 +324,126 @@ function act_kk_tambah(){
 	$kepala_keluarga=$this->input->post('kepala_keluarga');
 
 	$id_user=$this->session->userdata('penduduk_id');
-
-	$rand = rand(1000,9999);
-
-	$jenis_surat="SKPnAKK";
-	$surat_mohon="SKPnAKK-".$rand;
-
-		$data_pd=array(
-			'nama' => $nama,
-			'nik' => $nik,
-			'nomor_kk' => $no_kk,
-			'jenis_kelamin' => $jk,
-			'tempat_lahir' => $tmp_lhr,
-			'tgl_lahir' => $tgl_lhr,
-			'agama' => $agama,
-			'pendidikan' => $pendidikan,
-			'pekerjaan' => $pekerjaan,
-			'status_nikah' => $status_nikah,
-			'status_hub_keluarga' => $hub_kel
-
-		);
-		$this->m_dah->insert_data($data_pd,'penduduk');
-		$id_last_pend = $this->db->insert_id();	
-
-		$data_us=array(
-			'penduduk_id' => $id_last_pend,
-			'user_lvl' => "rakyat",
-			'user_status' => "1",
-			'user_login' => $nik,
-			'user_name' => $nama,
-			'user_pass' => md5($nik)
-		);	
-		$this->m_dah->insert_data($data_us,'user');
-
-
-		$data_sr= array(
-			'no_kk' => $no_kk,
-			'kpl_keluarga' => $kepala_keluarga,
-			'anggota_id' => $id_last_pend,
-
-			'penduduk_id' => $id_user,
-			'tgl_diajukan' => date('Y-m-d'),
-			'surat_mohon_id' => $surat_mohon,
-			'status_surat' => "review"
-		);
-		$this->m_dah->insert_data($data_sr,'sr_kk_tambah');
-		$id_terakhir = $this->db->insert_id();			
-
-		$data_sm= array(
-			'penduduk_id' => $id_user,
-			'tgl_diajukan' => date('Y-m-d'),
-			'surat_mohon_id' => $surat_mohon,
-			'jenis_surat' => $jenis_surat,
-			'notif' => 1,
-			'ket_surat' => "Pengajuan Penambahan Anggota Kartu Keluarga",
-			'status_surat' => "review"
-		);
-		$this->m_dah->insert_data($data_sm,'surat_mohon');
-
-		$config['upload_path'] = './upload/syarat/';
-		$config['allowed_types'] = 'jpg|png|jpeg|pdf';
-		$this->form_validation->set_rules('foto_kk', 'Foto Copy KK', 'required');
-		
-		if($_FILES["foto_kk"]["name"]){
-			$rand1=rand(1000,9999);
-			$config['file_name'] = $rand1.'_'.$_FILES['foto_kk']['name'];				
-			$this->load->library('upload', $config);
-			$foto_kk = $this->upload->do_upload('foto_kk');
-			if (!$foto_kk){
-				$error = array('error' => $this->upload->display_errors());
-			}else{
-				$foto_kk = $this->upload->data("file_name");
-				$data = array('upload_data' => $this->upload->data());
-				$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_kk' => $foto_kk),'sr_kk_tambah');			
-			}
-		
-		}
-
-	// end fotocopy kk
-
-	if($_FILES["akte_lahir"]["name"]){
-		$rand2=rand(10000,99999);
-		$config['file_name'] = $rand2.'_'.$_FILES['akte_lahir']['name'];				
-		$this->upload->initialize($config); //wajib di inisiasi ini kalau untuk mulitple upload file
-		
-		$akte_lahir = $this->upload->do_upload('akte_lahir');
-		if (!$akte_lahir){
-			$error = array('error' => $this->upload->display_errors());
-		}else{
-			$akte_lahir = $this->upload->data("file_name");
-			$data = array('upload_data' => $this->upload->data());
-			$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_lahir' => $akte_lahir),'sr_kk_tambah');			
-			redirect(base_url().'admin/sesi_surat/?alert=terkirim');
-		}
 	
-	}
+	$this->form_validation->set_rules('nik','Nomor Induk Kependudukan','required|edit_unique[penduduk.nik.'.$id.']|max_length[16]|min_length[16]');
+	$this->form_validation->set_rules('no_kk','Nomor Kartu Keluarga','required|max_length[16]|min_length[16]');
+	if($this->form_validation->run() != true){
+			$data['penduduk']=$this->m_dah->get_data('penduduk')->result();
+			$id_user=$this->session->userdata('penduduk_id');
 
-	// end fotocopy Akte lahir
+			$data['agama']=$this->m_dah->get_data('agama')->result();
+			$data['pendidikan']=$this->m_dah->get_data('pendidikan')->result();
+			$data['pekerjaan']=$this->m_dah->get_data('pekerjaan')->result();
+
+			$where_user=array(
+			'id' => $id_user
+			);
+			$data['data_diri']=$this->m_dah->edit_data($where_user,'penduduk')->result();
+
+			$this->load->view('admin/v_header');
+			$this->load->view('admin/sesi_surat/x_kk_tambah',$data);
+			$this->load->view('admin/v_footer');
+	}else{
+			$rand = rand(1000,9999);
+
+				$jenis_surat="SKPnAKK";
+				$surat_mohon="SKPnAKK-".$rand;
+
+					$data_pd=array(
+						'nama' => $nama,
+						'nik' => $nik,
+						'nomor_kk' => $no_kk,
+						'jenis_kelamin' => $jk,
+						'tempat_lahir' => $tmp_lhr,
+						'tgl_lahir' => $tgl_lhr,
+						'agama' => $agama,
+						'pendidikan' => $pendidikan,
+						'pekerjaan' => $pekerjaan,
+						'status_nikah' => $status_nikah,
+						'status_hub_keluarga' => $hub_kel
+
+					);
+					$this->m_dah->insert_data($data_pd,'penduduk');
+					$id_last_pend = $this->db->insert_id();	
+
+					$data_us=array(
+						'penduduk_id' => $id_last_pend,
+						'user_lvl' => "rakyat",
+						'user_status' => "1",
+						'user_login' => $nik,
+						'user_name' => $nama,
+						'user_pass' => md5($nik)
+					);	
+					$this->m_dah->insert_data($data_us,'user');
+
+
+					$data_sr= array(
+						'no_kk' => $no_kk,
+						'kpl_keluarga' => $kepala_keluarga,
+						'anggota_id' => $id_last_pend,
+
+						'penduduk_id' => $id_user,
+						'tgl_diajukan' => date('Y-m-d'),
+						'surat_mohon_id' => $surat_mohon,
+						'status_surat' => "review"
+					);
+					$this->m_dah->insert_data($data_sr,'sr_kk_tambah');
+					$id_terakhir = $this->db->insert_id();			
+
+					$data_sm= array(
+						'penduduk_id' => $id_user,
+						'tgl_diajukan' => date('Y-m-d'),
+						'surat_mohon_id' => $surat_mohon,
+						'jenis_surat' => $jenis_surat,
+						'notif' => 1,
+						'ket_surat' => "Pengajuan Penambahan Anggota Kartu Keluarga",
+						'status_surat' => "review"
+					);
+					$this->m_dah->insert_data($data_sm,'surat_mohon');
+
+					$config['upload_path'] = './upload/syarat/';
+					$config['allowed_types'] = 'jpg|png|jpeg|pdf';
+					$this->form_validation->set_rules('foto_kk', 'Foto Copy KK', 'required');
+					
+					if($_FILES["foto_kk"]["name"]){
+						$rand1=rand(1000,9999);
+						$config['file_name'] = $rand1.'_'.$_FILES['foto_kk']['name'];				
+						$this->load->library('upload', $config);
+						$foto_kk = $this->upload->do_upload('foto_kk');
+						if (!$foto_kk){
+							$error = array('error' => $this->upload->display_errors());
+						}else{
+							$foto_kk = $this->upload->data("file_name");
+							$data = array('upload_data' => $this->upload->data());
+							$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_kk' => $foto_kk),'sr_kk_tambah');			
+						}
+					
+					}
+
+				// end fotocopy kk
+
+				if($_FILES["akte_lahir"]["name"]){
+					$rand2=rand(10000,99999);
+					$config['file_name'] = $rand2.'_'.$_FILES['akte_lahir']['name'];				
+					$this->upload->initialize($config); //wajib di inisiasi ini kalau untuk mulitple upload file
+					
+					$akte_lahir = $this->upload->do_upload('akte_lahir');
+					if (!$akte_lahir){
+						$error = array('error' => $this->upload->display_errors());
+					}else{
+						$akte_lahir = $this->upload->data("file_name");
+						$data = array('upload_data' => $this->upload->data());
+						$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_lahir' => $akte_lahir),'sr_kk_tambah');			
+						redirect(base_url().'admin/sesi_surat/?alert=terkirim');
+					}
+				
+				}
+
+				// end fotocopy Akte lahir
+	}
+	
+
+	// end else cek validation
 
 
 }
@@ -458,7 +481,20 @@ function act_kk_kurang(){
 
 	$jenis_surat="SKPgAKK";
 	$surat_mohon="SKPgAKK-".$rand;
+	$this->form_validation->set_rules('no_kk','Nomor Kartu Keluarga','required|max_length[16]|min_length[16]');
+	if($this->form_validation->run() != true){
+			$data['penduduk']=$this->m_dah->get_data('penduduk')->result();
+			$id_user=$this->session->userdata('penduduk_id');
+			
+			$where_user=array(
+				'id' => $id_user
+			);
+			$data['data_diri']=$this->m_dah->edit_data($where_user,'penduduk')->result();
 
+			$this->load->view('admin/v_header');
+			$this->load->view('admin/sesi_surat/x_kk_kurang',$data);
+			$this->load->view('admin/v_footer');
+	}else{
 		$data_sr= array(
 			'no_kk' => $no_kk,
 			'kpl_keluarga' => $kepala_keluarga,
@@ -544,6 +580,9 @@ function act_kk_kurang(){
 	// end ket pindah
 	
 	redirect(base_url().'admin/sesi_surat/?alert=terkirim');
+	}
+	
+	// end else validation	
 
 }
 

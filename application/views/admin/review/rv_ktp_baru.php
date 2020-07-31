@@ -91,11 +91,7 @@
                                                    
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
-                                                   
-                                                </div>
+                                               
                                             <?php }?>   
 
                                     </div>  
@@ -126,7 +122,7 @@
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
 
                                                     <div class="form-group">
-                                                            <label for="">• Fotocopy Akta kelahiran/ijazah</label><br>
+                                                            <label for="">• Fotocopy Akta kelahiran/Ijazah</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->foto_kopi_akta)?>   
                                                         </div>
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            

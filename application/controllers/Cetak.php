@@ -133,7 +133,7 @@ class Cetak extends CI_Controller {
         }
     }
 
-    function cetak_surat_pindah($id){
+    function cetak_pindah($id){
         $this->load->database();
 
         if($id === ""){
