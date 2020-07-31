@@ -45,7 +45,7 @@
                                         </div> 
 
                                            <?php 
-                                           $where_user=array('id' => $kh->penduduk_id);
+                                           $where_user=array('id' => $kh->anggota_id);
                                             $data_diri=$this->m_dah->edit_data($where_user, 'penduduk')->result();
                                             foreach($data_diri as $dd ){
                                             ?>

@@ -44,7 +44,7 @@ II. DATA INDIVIDU PENGURANGAN
 <table class="data_surat">
     <?php
         $where=array(
-            'id' => $ds->penduduk_id
+            'id' => $ds->anggota_id
         );
         $data_diri = $this->m_dah->edit_data($where,'penduduk')->result();
         foreach ($data_diri as $dr){
