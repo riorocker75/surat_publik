@@ -123,10 +123,10 @@
                                 <div class="form-group">
                                     <label for="">Status Perkawinan</label>
                                     <select class="form-control form-control-user" name="status_nikah">
-                                       <option value="">--Pilih Status Menikah--</option>
+                                       <option value="">--Pilih Status Kawin--</option>
                                        
-                                        <option value="belum_menikah">Belum Menikah</option>
-                                        <option value="menikah">Menikah</option>
+                                        <option value="belum_menikah">Belum Kawin</option>
+                                        <option value="menikah">Kawin</option>
                                         <option value="cerai_hidup">Cerai Hidup</option>
                                         <option value="cerai_mati">Cerai Mati</option>
                                     </select>
@@ -137,7 +137,7 @@
                                        <option value="">--Pilih Status Keluarga--</option>
                                         
                                         <option value="kepala">Kepala Keluarga</option>
-                                        <option value="istri">Isteri</option>
+                                        <option value="istri">Istri</option>
                                         <option value="anak">Anak</option>
                                         <option value="menantu">Menantu</option>
                                         <option value="cucu">Cucu</option>

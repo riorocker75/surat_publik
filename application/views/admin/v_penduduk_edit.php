@@ -52,9 +52,9 @@
                                 <div class="form-group">
                                     <label for="">Jenis Kelamin</label>
                                     <select class="form-control form-control-user" name="jk">
-                                    <option value="<?php echo $pdk->jenis_kelamin?>" selected hidden><?php echo ucfirst($pdk->jenis_kelamin)?></option>
-                                    <option value="pria" >Pria</option>
-                                    <option value="wanita" >Wanita</option>
+                                    <option value="<?php echo $pdk->jenis_kelamin?>" selected hidden><?php echo $this->m_dah->jenis_kelamin($pdk->jenis_kelamin) ?></option>
+                                    <option value="pria" >Laki-laki</option>
+                                    <option value="wanita" >Perempuan</option>
                                 
                                     </select>
                                 </div>
@@ -135,8 +135,8 @@
                                     <select class="form-control form-control-user" name="status_nikah">
                                         <option value="<?php echo $pdk->status_nikah?>" selected hidden><?php echo $this->m_dah->cek_nikah($pdk->status_nikah)?></option>
                                        
-                                        <option value="belum_menikah">Belum Menikah</option>
-                                        <option value="menikah">Menikah</option>
+                                        <option value="belum_menikah">Belum Kawin</option>
+                                        <option value="menikah">Kawin</option>
                                         <option value="cerai_hidup">Cerai Hidup</option>
                                         <option value="cerai_mati">Cerai Mati</option>
 
@@ -148,7 +148,7 @@
                                       <select class="form-control form-control-user" name="status_hub_keluarga" required>
                                        <option value="<?php echo $pdk->status_hub_keluarga?>" selected hidden><?php echo $this->m_dah->status_keluarga($pdk->status_hub_keluarga);?></option>
                                         <option value="kepala">Kepala Keluarga</option>
-                                        <option value="istri">Isteri</option>
+                                        <option value="istri">Istri</option>
                                         <option value="anak">Anak</option>
                                         <option value="menantu">Menantu</option>
                                         <option value="cucu">Cucu</option>

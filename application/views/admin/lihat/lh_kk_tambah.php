@@ -121,7 +121,7 @@
                                             </div>  
                          
                                                      <div class="form-group">
-                                                            <label style="font-weight:800">KK Lama Aslis</label><br>
+                                                            <label style="font-weight:800">KK Lama Asli</label><br>
                                                             <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                         </div>
                                                     <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            

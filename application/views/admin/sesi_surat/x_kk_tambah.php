@@ -61,13 +61,13 @@
 
                                             <div class="form-group">
                                                 <label for="">Nama Kepala Keluarga</label>
-                                                <input type="text" class="form-control form-control-user" name="kepala_keluarga" required>
+                                                <input type="text" class="form-control form-control-user" name="kepala_keluarga" value="<?php echo $dr->nama?>" required>
                                             </div>
                                              <?php echo form_error('kepala_keluarga', '<div class="form-error">', '</div>'); ?>
 
                                               <div class="form-group">
                                                 <label for="">Nomor KK</label>
-                                                <input type="number" class="form-control form-control-user"  name="no_kk" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16"  required>
+                                                <input type="number" class="form-control form-control-user" value="<?php echo $dr->nomor_kk ?>" name="no_kk" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16"  required>
                                             <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
                                                 
                                             </div>
@@ -87,14 +87,15 @@
                                        
                                                  <div class="form-group">
                                                         <label for="">NIK</label>
-                                                        <input type="number" class="form-control form-control-user" name="nik" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16">
+                                                        <input type="number" class="form-control form-control-user" name="nik" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16" required>
+                                                      <small style="color:red">*Jika belum memiliki NIK cukup isi dengan tanggal/bulan/tahun lahir </small>
                                                 <?php echo form_error('nik', '<div class="form-error">', '</div>'); ?>
                                                 
                                                 </div>
 
                                              <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                         <select class="form-control form-control-user" name="jk">
+                                                         <select class="form-control form-control-user" name="jk" required>
                                                         <option value="">--Pilih Jenis Kelamin--</option>
                                                         
                                                          <option value="pria">Laki-Laki</option>

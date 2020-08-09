@@ -85,7 +85,7 @@
                                     <td>
                                       <?php echo $sdm->surat_mohon_id?>
                                         <p style="font-size: 11px;opacity: 0.8">
-                                          <?php echo date('d.m.Y',strtotime($sdm->tgl_surat))?>
+                                         <?php echo date('d-m-Y',strtotime($sdm->tgl_diajukan))?>
                                         </p>
                                       </td>
                                     <td><?php echo $sdm->ket_surat?></td>
@@ -162,7 +162,7 @@
                                     <td>
                                       <?php echo $sdtr->nomor_surat?>
                                         <p style="font-size: 11px;opacity: 0.8">
-                                          <?php echo date('d.m.Y',strtotime($sdtr->tgl_surat))?>
+                                          <?php echo date('d-m-Y',strtotime($sdtr->tgl_surat))?>
                                         </p>
                                       </td>
                                     <td><?php echo $sdtr->ket_surat?></td>
@@ -171,7 +171,7 @@
 
                                            <?php
                                             if( $sdtr->status_surat == "diterima"){
-                                              echo "Selesai"
+                                              echo "Selesai";
                                             }
                                            ?>
                                         </label>
@@ -241,7 +241,7 @@
                                     <td>
                                       <?php echo $sdtl->surat_mohon_id?>
                                         <p style="font-size: 11px;opacity: 0.8">
-                                          <?php echo date('d.m.Y',strtotime($sdtl->tgl_diajukan))?>
+                                          <?php echo date('d-m-Y',strtotime($sdtl->tgl_diajukan))?>
                                         </p>
                                       </td>
                                     <td><?php echo $sdtl->ket_surat?></td>

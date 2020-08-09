@@ -128,7 +128,7 @@
 </script>
 <script>
 $(document).ready(function() {
-  $('#dataTable').DataTable();
+    $('#dataTable').DataTable();
   $('#review-tabel').DataTable();
   $('#ditolak-tabel').DataTable();
   $('#diterima-tabel').DataTable();
@@ -136,6 +136,70 @@ $(document).ready(function() {
   $('#lain-review-tabel').DataTable();
   $('#lain-ditolak-tabel').DataTable();
   $('#lain-diterima-tabel').DataTable();
+  // $('#dataTable').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+  // $('#review-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+  // $('#ditolak-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+  // $('#diterima-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+
+  // $('#lain-review-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+  // $('#lain-ditolak-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
+  // $('#lain-diterima-tabel').DataTable({
+  //     "columnDefs": [
+  //       { "orderable": false, "targets": 0 }
+  //     ],
+  //     "bSort" : false,
+  //     "ordering": false
+
+     
+  //   });
 
 
 });

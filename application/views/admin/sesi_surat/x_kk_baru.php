@@ -50,7 +50,7 @@
 
                                                      <div class="form-group">
                                                         <label style="font-weight:800">Upload Fotocopy Buku Nikah (bagi yang sudah menikah)</label>
-                                                        <input class="form-control-file" type="file" name="buku_nikah" id="file_3" required>
+                                                        <input class="form-control-file" type="file" name="buku_nikah" id="file_3">
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
 
@@ -118,7 +118,7 @@
                                             
                                               <div class="form-group">
                                                 <label for="">Nama dan NIK </label>
-                                                <textarea class="form-control form-control-user" name="nama_nik" placeholder="Contoh: Budi 1234567890123456, Adi 6543211234567890"></textarea>
+                                                <textarea class="form-control form-control-user" name="nama_nik" placeholder="Contoh: Budi 1234567890123456, Adi 6543211234567890" required=""></textarea>
                                                     
                                                 
                                             </div>

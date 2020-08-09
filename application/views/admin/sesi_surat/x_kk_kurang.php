@@ -63,13 +63,13 @@
 
                                             <div class="form-group">
                                                 <label for="">Nama Kepala Keluarga</label>
-                                                <input type="text" class="form-control form-control-user" name="kepala_keluarga" required>
+                                                <input type="text" class="form-control form-control-user" value="<?php echo $dr->nama?>" name="kepala_keluarga" required>
                                             </div>
                                              <?php echo form_error('kepala_keluarga', '<div class="form-error">', '</div>'); ?>
 
                                               <div class="form-group">
                                                 <label for="">Nomor KK</label>
-                                                <input class="form-control form-control-user"  name="no_kk" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16" required>
+                                                <input class="form-control form-control-user"  name="no_kk" type="number" value="<?php echo $dr->nomor_kk ?>"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16" required>
                                             <?php echo form_error('no_kk', '<div class="form-error">', '</div>'); ?>
                                                 
                                             </div>

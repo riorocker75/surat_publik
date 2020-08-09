@@ -27,9 +27,9 @@
             <div class="col mr-3" style="margin-left:20px">
               Total Penduduk
               <div class="text-white-50"><?php echo $this->m_dah->get_data('penduduk')->num_rows() ?> Orang</div>
-              <span style="font-size: 12px">Pria: <?php echo $this->m_dah->penduduk_dif_total('pria')->num_rows() ?></span>
+              <span style="font-size: 12px">Laki-laki: <?php echo $this->m_dah->penduduk_dif_total('pria')->num_rows() ?></span>
               <span>|</span>
-              <span style="font-size: 12px">Wanita: <?php echo $this->m_dah->penduduk_dif_total('wanita')->num_rows() ?></span>
+              <span style="font-size: 12px">Perempuan: <?php echo $this->m_dah->penduduk_dif_total('wanita')->num_rows() ?></span>
               <p style="font-size: 12px">Total KK:&nbsp;<?php echo $this->m_dah->kk_total('kepala')->num_rows(); ?></p>
             </div>
           </div>
@@ -55,9 +55,9 @@
             <div class="col mr-4" style="margin-left:20px">
               Bak Buloh
               <div class="text-white-50"><?php echo $this->m_dah->dusun_total('buloh')->num_rows() ?> Orang</div>
-              <span style="font-size: 12px">Pria: <?php echo $this->m_dah->dusun_total_jk('buloh', 'pria')->num_rows() ?></span>
+              <span style="font-size: 12px">Laki-laki: <?php echo $this->m_dah->dusun_total_jk('buloh', 'pria')->num_rows() ?></span>
               <span>|</span>
-              <span style="font-size: 12px">Wanita: <?php echo $this->m_dah->dusun_total_jk('buloh', 'wanita')->num_rows() ?></span>
+              <span style="font-size: 12px">Perempuan: <?php echo $this->m_dah->dusun_total_jk('buloh', 'wanita')->num_rows() ?></span>
               <p style="font-size: 12px">Total KK:&nbsp;<?php echo $this->m_dah->kk_dusun_total('buloh', 'kepala')->num_rows(); ?></p>
             </div>
           </div>
@@ -84,9 +84,9 @@
             <div class="col mr-4" style="margin-left:20px">
               Tgk Dikulam
               <div class="text-white-50"><?php echo $this->m_dah->dusun_total('dikulam')->num_rows() ?> Orang</div>
-              <span style="font-size: 12px">Pria: <?php echo $this->m_dah->dusun_total_jk('dikulam', 'pria')->num_rows() ?></span>
+              <span style="font-size: 12px">Laki-laki: <?php echo $this->m_dah->dusun_total_jk('dikulam', 'pria')->num_rows() ?></span>
               <span>|</span>
-              <span style="font-size: 12px">Wanita: <?php echo $this->m_dah->dusun_total_jk('dikulam', 'wanita')->num_rows() ?></span>
+              <span style="font-size: 12px">Perempuan: <?php echo $this->m_dah->dusun_total_jk('dikulam', 'wanita')->num_rows() ?></span>
               <p style="font-size: 12px">Total KK:&nbsp;<?php echo $this->m_dah->kk_dusun_total('dikulam', 'kepala')->num_rows(); ?></p>
             </div>
           </div>
@@ -110,9 +110,9 @@
             <div class="col mr-4" style="margin-left:20px">
               Lampoh Kubu
               <div class="text-white-50"><?php echo $this->m_dah->dusun_total('lampoh')->num_rows() ?> Orang</div>
-              <span style="font-size: 12px">Pria: <?php echo $this->m_dah->dusun_total_jk('lampoh', 'pria')->num_rows() ?></span>
+              <span style="font-size: 12px">Laki-laki: <?php echo $this->m_dah->dusun_total_jk('lampoh', 'pria')->num_rows() ?></span>
               <span>|</span>
-              <span style="font-size: 12px">Wanita: <?php echo $this->m_dah->dusun_total_jk('lampoh', 'wanita')->num_rows() ?></span>
+              <span style="font-size: 12px">Perempuan: <?php echo $this->m_dah->dusun_total_jk('lampoh', 'wanita')->num_rows() ?></span>
               <p style="font-size: 12px">Total KK:&nbsp;<?php echo $this->m_dah->kk_dusun_total('lampoh', 'kepala')->num_rows(); ?></p>
             </div>
           </div>
@@ -144,10 +144,12 @@
                 <tr>
                   <th width="2%">No</th>
                   <th>Nama</th>
+                  <th>Nomor KK</th>
                   <th>Nik</th>
+
                   <th>Dusun</th>
 
-                  <th>Hp/Telepon</th>
+                  
                   <th width="12%" style="text-align: center;">Opsi</th>
 
                 </tr>
@@ -162,13 +164,14 @@
                       <p style="font-size: 12px"><?php echo  date('d-m-Y',  strtotime($pd->tgl_lahir)) ?></p>
 
                       <p style="font-size: 12px;margin-top:-16px;text-transform: capitalize;"><?php echo $pd->agama ?></p>
-                      <p style="font-size: 12px;margin-top:-8px;text-transform: capitalize;line-height: 0"><?php echo  $pd->jenis_kelamin ?></p>
+                      <p style="font-size: 12px;margin-top:-8px;text-transform: capitalize;line-height: 0"><?php echo  $this->m_dah->jenis_kelamin($pd->jenis_kelamin) ?></p>
 
                     </td>
+                    <td><?php echo  $pd->nomor_kk ?></td>
+
                     <td><?php echo $pd->nik ?></td>
                     <td><?php echo  $this->m_dah->cek_dusun($pd->dusun); ?></td>
 
-                    <td><?php echo  $pd->no_hp ?></td>
 
                     <td style="text-align: center;">
                       <a title="Lihat data" href="<?php echo base_url() . 'admin/penduduk_view/' . $pd->id ?>"><i class="fa fa-eye" aria-hidden="true"></i> </a>

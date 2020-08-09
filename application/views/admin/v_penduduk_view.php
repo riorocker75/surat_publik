@@ -52,10 +52,10 @@
                                     <select class="form-control form-control-user" disabled>
                                         <option value="pria" <?php if ($pd->jenis_kelamin == "pria") {
                                                                     echo "selected";
-                                                                } ?>>Pria</option>
+                                                                } ?>>Laki-laki</option>
                                         <option value="wanita" <?php if ($pd->jenis_kelamin == "wanita") {
                                                                     echo "selected";
-                                                                } ?>>Wanita</option>
+                                                                } ?>>Perempuan</option>
                                     </select>
                                 </div>
 
@@ -117,7 +117,7 @@
                                 <div class="form-group">
                                     <label for="">Status Perkawinan</label>
                                     <select class="form-control form-control-user" name="status_nikah" disabled>
-                                        <option value="<?php echo $this->m_dah->cek_nikah($pk->status_nikah) ?>"><?php echo $pd->pekerjaan ?></option>
+                                        <option value="<?php echo $this->m_dah->cek_nikah($pk->status_nikah) ?>"><?php echo $this->m_dah->cek_nikah($pd->status_nikah)  ?></option>
 
                                     </select>
                                 </div>

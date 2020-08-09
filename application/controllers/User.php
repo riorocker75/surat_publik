@@ -1275,7 +1275,7 @@ mulai insert syarat surat
 		}
 
 		// edn ktp
-				redirect(base_url().'admin/sesi_surat/?alert=terkirm');
+				redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 }
 
 
@@ -1366,10 +1366,10 @@ function act_surat_miskin(){
 				$ktp = $this->upload->data("file_name");
 				$data = array('upload_data' => $this->upload->data());
 				$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_ktp' => $ktp),'sr_ket_miskin');			
-				redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 			}
 		
 		}
+				redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 	
 	// end Ktp
 }
@@ -1506,7 +1506,6 @@ function act_surat_ket_nikah(){
 		}
 	
 	// end Buku Nikah
-
 }
 
 
@@ -1597,10 +1596,10 @@ function act_surat_belum_nikah(){
 				$ktp = $this->upload->data("file_name");
 				$data = array('upload_data' => $this->upload->data());
 				$this->m_dah->update_data(array('id' => $id_terakhir),array('foto_kopi_ktp' => $ktp),'sr_belum_nikah');			
-				redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 			}
 		
 		}
+				redirect(base_url().'admin/sesi_surat/?alert=terkirim');
 	
 	// end Ktp
 }

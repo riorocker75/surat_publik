@@ -804,10 +804,10 @@ function cek_wn($status){
 	function cek_nikah($status){
 		switch ($status) {
 			case 'menikah':
-				echo "Menikah";
+				echo "Kawin";
 				break;
 			case 'belum_menikah':
-				echo "Belum Menikah";
+				echo "Belum Kawin";
 				break;	
 			case 'cerai_hidup':
 				echo "Cerai Hidup";

@@ -39,7 +39,7 @@
                                                     <div class="line2" style="margin-bottom:10px"></div>
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Upload Scan KK Asli (bagi kepala keluarga yang pindah)</label>
+                                                        <label style="font-weight:800">Upload KK Asli (bagi kepala keluarga yang pindah)</label>
                                                             <input class="form-control-file" type="file" name="kk_asli" id="file_2">
                                                     </div>
                                                     <div class="file_show" id="file_show_2"></div>
@@ -49,7 +49,7 @@
    
 
                                                     <div class="form-group">
-                                                        <label style="font-weight:800">Upload KTP lama untuk dicabut</label>
+                                                        <label style="font-weight:800">Upload KTP Lama</label>
                                                             <input class="form-control-file" type="file" name="ktp" id="file_3" required>
                                                     </div>
                                                     <div class="file_show" id="file_show_3"></div>
@@ -119,7 +119,7 @@
 
                                                     <div class="form-group">
                                                         <label for="">Desa Dituju</label>
-                                                        <input type="text" class="form-control form-control-user" name="desa" >
+                                                        <input type="text" class="form-control form-control-user" name="desa" required>
                                                    
                                                     </div>
                                                     <?php echo form_error('desa', '<div class="form-error">', '</div>'); ?>
@@ -140,7 +140,7 @@
 
                                                     <div class="form-group">
                                                         <label for="">Alasan Pindah</label>
-                                                        <textarea type="text" class="form-control form-control-user" name="alasan" >
+                                                        <textarea type="text" class="form-control form-control-user" name="alasan" required>
                                                         </textarea>
                                                    
                                                     </div>
@@ -148,7 +148,7 @@
                                                    
                                                     <div class="form-group">
                                                         <label for="">Anggota yang pindah</label>
-                                                        <textarea type="text" class="form-control form-control-user" name="anggota" >
+                                                        <textarea type="text" class="form-control form-control-user" name="anggota" required>
                                                         </textarea>
                                                    
                                                     </div>
