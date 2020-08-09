@@ -11,6 +11,25 @@
 		
 		<?php if($this->session->userdata('level') == "admin"){?>
 		<div class="row">
+				<div class="col-lg-4 mb-4">
+			<div class="card bg-info text-white shadow">
+			<div class="card-body">
+				<div class="row no-gutters align-items-center">
+					<div class="col-auto">
+					<i class="fa fa-user fa-2x text-gray-300"></i>
+						<!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->
+					</div>
+					<div class="col mr-3" style="margin-left:20px">
+						<?php echo $this->m_dah->kk_total('kepala')->num_rows(); ?> KK
+						<div class="text-white-50">Jumlah KK</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+		<!-- end jumlah kk -->
 		<div class="col-lg-4 mb-4">
 			<div class="card bg-primary text-white shadow">
 			<div class="card-body">
@@ -65,15 +84,15 @@
 			  <div class="col mr-2">
 				<div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="text-align: center">Selamat Datang</div>
 				<!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $this->session->userdata('name');?></div> -->
-				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+				<!-- <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
 					Di 
-				</div>
+				</div> -->
 				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
 					Sistem Informasi Pelayanan Administrasi Kependudukan
 				</div>
-				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+				<!-- <div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
 					Pada
-				</div>
+				</div> -->
 
 				<div class="h5 mb-0 font-weight-bold text-gray-800" style="text-align: center">
 					Desa Ulee Ceubrek Kecamatan Meurah Mulia Kabupaten Aceh Utara

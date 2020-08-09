@@ -254,7 +254,7 @@
 	  <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url().'admin/user_edit/'.$this->session->userdata('id');?>">
           <i class="fa fa-user" aria-hidden="true"></i>
-          <span>Profile Saya</span></a>
+          <span>Profil Saya</span></a>
       </li>
 	  
 	  

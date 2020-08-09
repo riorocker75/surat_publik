@@ -136,6 +136,8 @@ $(document).ready(function() {
   $('#lain-review-tabel').DataTable();
   $('#lain-ditolak-tabel').DataTable();
   $('#lain-diterima-tabel').DataTable();
+
+  // untuk mematikan fungsi b-sort databael
   // $('#dataTable').DataTable({
   //     "columnDefs": [
   //       { "orderable": false, "targets": 0 }

@@ -2,7 +2,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Profile Saya</h1>
+  <h1 class="h3 mb-0 text-gray-800">Profil Saya</h1>
   <a href="<?php echo base_url()?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
 </div>
 	<?php show_alert()?>
@@ -11,7 +11,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Ubah profile dan password</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Ubah username dan password</h6>
                     </div>
                     <div class="card-body">
 					<?php foreach($user as $u){ ?>

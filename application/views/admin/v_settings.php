@@ -30,7 +30,7 @@
 						<th>Berita</th>			
 						<td><textarea id="editor1" name="blog_welcome" class="form-control" style="min-height:300px"><?php echo $this->m_dah->get_option('blog_welcome'); ?></textarea></td>
 					</tr>
-					<tr>
+			<!-- 		<tr>
 						<th>Web Logo</th>			
 						<td>
 							<?php 
@@ -41,7 +41,7 @@
 							<input type="file" name="blog_logo">
 							<small>Leave blank if doesn't change</small>
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<th><input type="submit" value="Save Settings" class="btn-sm btn-primary btn"></th>
 						<td></td>			
