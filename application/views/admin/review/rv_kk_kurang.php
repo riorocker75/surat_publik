@@ -75,7 +75,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->jenis_kelamin?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($dd->jenis_kelamin) ?>" disabled>
                                                    
                                                 </div>
 
@@ -93,21 +93,21 @@
 
                                                 <div class="form-group">
                                                     <label for="">Status Perkawinan</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->status_nikah?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->cek_nikah($dd->status_nikah) ?>" disabled>
                                                    
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="">Status Hub. Keluarga</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->status_hub_keluarga?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->status_keluarga($dd->status_hub_keluarga) ?>" disabled>
                                                    
                                                 </div>
 
-                                                <div class="form-group">
+                                              <!--   <div class="form-group">
                                                     <label for="">Alamat</label>
                                                     <input type="text" class="form-control form-control-user" value="<?php echo $dd->alamat?>" disabled>
                                                    
-                                                </div>
+                                                </div> -->
                                             <?php }?>   
 
                                     </div>  

@@ -3,7 +3,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Lihat Surat Mohon Kartu Tanda Penduduk Hilang</h1>
-  <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
+  <!-- <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a> -->
   
 </div>
 
@@ -51,7 +51,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->jenis_kelamin?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($dd->jenis_kelamin) ?>" disabled>
                                                    
                                                 </div>
 
@@ -95,7 +95,37 @@
                                                         </div>
 
                                     </div>
+                                       <!-- keterangan start -->
+                                 <?php if($kh->status_surat == "review"){?>
 
+                                <?php }else{?>
+                                    <div class="syarat">
+                                        <div class="title-syarat">
+                                           Keterangan
+                                        </div>
+                                        <?php if($kh->status_surat =="diterima"){?>
+                                             <div class="form-group">
+                                                <label for="">Nomor Surat</label>
+                                                <input type="text" class="form-control form-control-user" value="<?php echo $kh->nomor_surat?>" disabled>
+                                            </div>
+                                         <?php } ?> 
+                                          <?php
+                                         $where=array(
+                                                'surat_mohon_id' => $kh->surat_mohon_id
+                                            );
+                                         
+                                         $srm=$this->m_dah->edit_data($where,'surat_mohon')->result();
+                                         foreach ($srm as $sr) {}
+                                         ?>
+                                           <div class="form-group">
+                                                <label for="">Pemberitahuan</label>
+                                                <textarea type="text" class="form-control form-control-user" disabled=""><?php echo $sr->syarat ?></textarea> 
+                                            </div>
+
+                                     </div>   
+                                 <?php } ?>
+
+                                     <!-- end keterangan  -->
                                  <input type="hidden" name="surat_id" value="<?php echo $kh->surat_mohon_id?>">  
                                 </div> 
 

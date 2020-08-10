@@ -49,7 +49,7 @@
                                     </a>
                                     &nbsp;
                                     
-                                      <a href="<?php echo base_url().'admin/tambah_surat_hapus/'.$ds->id?>" >
+                                      <a onclick="return confirm('Apakah Data ingin dihapus?')" href="<?php echo base_url().'admin/tambah_surat_hapus/'.$ds->id?>" >
                                      <i class="fa fa-trash"></i>
                                     </a>
                                    </td>

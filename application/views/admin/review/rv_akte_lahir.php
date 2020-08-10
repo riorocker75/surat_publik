@@ -49,7 +49,7 @@
 
                                         <div class="form-group">
                                             <label for="">Jenis Kelamin</label>
-                                            <input type="text" class="form-control form-control-user" value="<?php echo $kh->kelamin?>" disabled>
+                                            <input type="text" class="form-control form-control-user" value="<?php echo $kh->kelamin ?>" disabled>
                                             
                                         </div>
 
@@ -157,11 +157,7 @@
                                                    
                                                 </div>
                                                 
-                                                <div class="form-group">
-                                                    <label for="">Alamat</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $su->alamat?>" disabled>
-                                                   
-                                                </div>         
+                                                  
 
                                      </div>   
 

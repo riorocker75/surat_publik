@@ -3,7 +3,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Lihat Surat Mohon Keterangan Bercerai</h1>
-  <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a>
+  <!-- <a href="<?php echo base_url().'user/arsip_surat/'?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></i> Kembali</a> -->
   
 </div>
 
@@ -56,7 +56,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->jenis_kelamin?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($dd->jenis_kelamin) ?>" disabled>
                                                    
                                                 </div>
 
@@ -104,7 +104,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $di->jenis_kelamin?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($di->jenis_kelamin) ?>" disabled>
                                                    
                                                 </div>
 
@@ -136,30 +136,58 @@
 
                                 <!-- persyaratan -->
                                 <div class="col-lg-6 col-md-12 col-12">
-                                <div class="syarat">
-                                            <div class="title-syarat">
-                                                File Persyaratan 
-                                            </div>  
-                                                    <div class="form-group">
-                                                        <label style="font-weight: 800">Fotocopy Kartu Keluarga</label><br>
-                                                        <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
-                                                    </div>
-
-                                                    <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
+                                    <div class="syarat">
+                                                <div class="title-syarat">
+                                                    File Persyaratan 
+                                                </div>  
                                                         <div class="form-group">
-                                                            <label style="font-weight: 800">Fotocopy KTP Laki-Laki</label><br>
-                                                            <?php echo $this->m_dah->preview_file($kh->ktp_suami)?>   
+                                                            <label style="font-weight: 800">Fotocopy Kartu Keluarga</label><br>
+                                                            <?php echo $this->m_dah->preview_file($kh->foto_kopi_kk)?>   
                                                         </div>
 
-                                                         <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
-                                                        <div class="form-group">
-                                                            <label style="font-weight: 800">Fotocopy KTP Perempuan</label><br>
-                                                            <?php echo $this->m_dah->preview_file($kh->ktp_istri)?>   
-                                                        </div>
+                                                        <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
+                                                            <div class="form-group">
+                                                                <label style="font-weight: 800">Fotocopy KTP Laki-Laki</label><br>
+                                                                <?php echo $this->m_dah->preview_file($kh->ktp_suami)?>   
+                                                            </div>
 
-                          
-                                    </div>
+                                                             <div class="line2" style="border:1px solid #c1c2c3;margin-bottom:10px"></div>            
+                                                            <div class="form-group">
+                                                                <label style="font-weight: 800">Fotocopy KTP Perempuan</label><br>
+                                                                <?php echo $this->m_dah->preview_file($kh->ktp_istri)?>   
+                                                            </div>
 
+                              
+                                        </div>
+                                    <!-- keterangan start -->
+                                 <?php if($kh->status_surat == "review"){?>
+
+                                <?php }else{?>
+                                    <div class="syarat">
+                                        <div class="title-syarat">
+                                           Keterangan
+                                        </div>
+                                        <?php if($kh->status_surat =="diterima"){?>
+                                             <div class="form-group">
+                                                <label for="">Nomor Surat</label>
+                                                <input type="text" class="form-control form-control-user" value="<?php echo $kh->nomor_surat?>" disabled>
+                                            </div>
+                                         <?php } ?> 
+                                          <?php
+                                         $where=array(
+                                                'surat_mohon_id' => $kh->surat_mohon_id
+                                            );
+                                         
+                                         $srm=$this->m_dah->edit_data($where,'surat_mohon')->result();
+                                         foreach ($srm as $sr) {}
+                                         ?>
+                                           <div class="form-group">
+                                                <label for="">Pemberitahuan</label>
+                                                <textarea type="text" class="form-control form-control-user" disabled=""><?php echo $sr->syarat ?></textarea> 
+                                            </div>
+
+                                     </div>   
+                                 <?php } ?>
                                              
                                 </div> 
 

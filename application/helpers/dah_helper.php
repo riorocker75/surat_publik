@@ -6,9 +6,9 @@ function show_alert(){
 		if($alert == "add"){
 			echo "<div class='alert alert-success alert-dah'>Data Berhasil Di Tambah. <span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "delete"){
-			echo "<div class='alert alert-success alert-dah'>Data Berhasil Di Hapus. <span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>Data Berhasil Di Hapus. <span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "update"){
-			echo "<div class='alert alert-success alert-dah'>Data Berhasil Di Update. <span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>Data Berhasil Di Update. <span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "login-failed"){
 			echo "<div class='alert alert-danger alert-dah'>Username & Password Salah !</div>";
 		}else if($alert == "setting-update"){
@@ -18,9 +18,9 @@ function show_alert(){
 		}else if($alert == "page-delete"){
 			echo "<div class='alert alert-success alert-dah'>Halaman Berhasil Di Hapus.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "post-saved"){
-			echo "<div class='alert alert-success alert-dah'>Post Berhasil Di Simpan.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>Post Berhasil Di Simpan.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "post-delete"){
-			echo "<div class='alert alert-success alert-dah'>Surat Berhasil Di Hapus Permanen.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>Surat Berhasil Di Hapus Permanen.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "post-trash"){
 			echo "<div class='alert alert-success alert-dah'>Post Berhasil Di Pindahkan Ke Tong Sampah.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "menu-saved"){
@@ -30,7 +30,7 @@ function show_alert(){
 		}else if($alert == "widget-delete"){
 			echo "<div class='alert alert-success alert-dah'>Widget Berhasil Di Hapus.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "user-add"){
-			echo "<div class='alert alert-success alert-dah'>User Berhasil Di Tambah.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+			echo "<div class='text-center alert alert-success alert-dah'>User Berhasil Di Tambah.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "user-update"){
 			echo "<div class='alert alert-success alert-dah'>Data User Berhasil Di Update.<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}else if($alert == "remove-cart"){
@@ -50,6 +50,9 @@ function show_alert(){
 		}	
 		else if($alert == "terkirim"){
 			echo "<div class='text-center alert alert-success alert-dah'>Permohonan Surat Anda  Berhasil Diajukan Ke Sekretaris Desa, Mohon Bersabar Untuk Menunggu Status Suratnya<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
+		}	
+			else if($alert == "tambah"){
+			echo "<div class='text-center alert alert-success alert-dah'>Berhasil ditambahkan<span class='glyphicon glyphicon-remove pull-right btn-hide-alert'></span></div>";
 		}	
 
 	}

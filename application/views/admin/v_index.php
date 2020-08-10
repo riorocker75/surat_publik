@@ -20,7 +20,7 @@
 						<!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->
 					</div>
 					<div class="col mr-3" style="margin-left:20px">
-						<?php echo $this->m_dah->kk_total('kepala')->num_rows(); ?> KK
+						<?php echo $this->m_dah->kk_total('kepala')->num_rows(); ?> Kepala Keluarga
 						<div class="text-white-50">Jumlah KK</div>
 						</div>
 					</div>

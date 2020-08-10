@@ -3603,7 +3603,7 @@ function delete_ket_cerai_arsip($id){
 				'format_surat' =>$format
 			);
 			$this->m_dah->insert_data($data,'jenis_surat');
-			redirect(base_url().'admin/data_surat');
+			redirect(base_url().'admin/data_surat/?alert=tambah');
 		}
 		
 	}
@@ -3657,8 +3657,9 @@ function delete_ket_cerai_arsip($id){
 				'format_surat' =>$format
 			);
 			$this->m_dah->update_data($where,$data,'jenis_surat');			
+			redirect(base_url().'admin/data_surat/?alert=update');
 			
-			redirect(base_url().'admin/tambah_surat_edit/'.$id.'/?alert=update');
+			// redirect(base_url().'admin/tambah_surat_edit/'.$id.'/?alert=update');
 		}
 		
 

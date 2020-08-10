@@ -71,7 +71,7 @@
 
                                 <div class="form-group">
                                     <label for="">Jenis Kelamin</label>
-                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->jenis_kelamin?>" disabled>
+                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($dd->jenis_kelamin)?>" disabled>
                                    
                                 </div>
 
@@ -92,7 +92,7 @@
                         </div>
                         <!-- end data diri-->
 
-                        <button type="submit" class="btn btn-primary"> Ajukan Surat <i class="fa fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Ajukan Surat </button>
 				</form>	
 				</div>
 			</div>
