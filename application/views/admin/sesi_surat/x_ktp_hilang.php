@@ -71,7 +71,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control form-control-user" value="<?php echo $dd->jenis_kelamin?>" disabled>
+                                                    <input type="text" class="form-control form-control-user" value="<?php echo $this->m_dah->jenis_kelamin($dd->jenis_kelamin) ?>" disabled>
                                                    
                                                 </div>
 

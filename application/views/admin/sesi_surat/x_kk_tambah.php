@@ -88,7 +88,7 @@
                                                  <div class="form-group">
                                                         <label for="">NIK</label>
                                                         <input type="number" class="form-control form-control-user" name="nik" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16" maxlength="16" required>
-                                                      <small style="color:red">*Jika belum memiliki NIK cukup isi dengan tanggal/bulan/tahun lahir </small>
+                                                      <small style="color:red">*Jika belum memiliki NIK isi dengan 00000000Tgl/Bln/Thn (Total 16 Angka) </small>
                                                 <?php echo form_error('nik', '<div class="form-error">', '</div>'); ?>
                                                 
                                                 </div>
