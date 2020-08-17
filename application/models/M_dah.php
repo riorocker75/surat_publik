@@ -1,74 +1,83 @@
 <?php 
 class M_dah extends CI_Model{
 	// general
+
+	// ini untuk menampilkan data berdasarkan kondisi id
 	function edit_data($where,$table){
 		return $this->db->get_where($table,$where);
 	}
 
+	// ini untuk menampilkan data berdasarkan kondisi id dengan order data
 	function edit_data_order($where,$table,$column,$order){
 		$this->db->order_by($column, $order);
 		return $this->db->get_where($table,$where);
 	}
 
 
+// untuk dapatkan total kk melalui penduduk berdasarkan nomorkk
 	function get_total_kk(){
-		// $result= $this->db->query("SELECT nomor_kk, COUNT(*) as jumlah FROM penduduk GROUP BY nomor_kk")->row_array();
-		
-		// $count = $result['jumlah'];
-		// print_r($count[0]);
-		// print_r ($count);
-		// $query = $this->db
-		// ->select('nomor_kk, count(nomor_kk)')
-		// ->group_by('nomor_kk')
-		// ->get('penduduk');
-		// $query->result();
-		// print_r($query->result());
 	
 		$this->db->select('nomor_kk, count(*)');
 		$this->db->group_by('nomor_kk');
 		$this->db->get('penduduk');
 		echo $this->db->count_all_results();
 	}
+
+	// ini untuk menampilkan data
 	function get_data($table){
 		return $this->db->get($table);
 	}
 
+	// ini untuk menampilkan data secara desc
+
 	function get_data_desc($id,$table){
-		$this->db->order_by($id, 'asc');
+		$this->db->order_by($id, 'desc');
 		return $this->db->get($table);
 	}
 
+	// ini untuk simpan data
 	function insert_data($data,$table){
 		$this->db->insert($table,$data);
 	}
 
+	// ini untuk update data
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
 
+	// ini untuk hapus data
 	function delete_data($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);
 	}	
+
+	// ini untuk menampilkan data secara orderby
 
 	function get_data_order($order,$column,$table){
 		$this->db->order_by($column, $order); 
 		return $this->db->get($table);
 	}
 
+	// ini untuk menampilkan data secara tergroup
+
 	function get_group($table,$group){
 		return $this->db->query("select * from $table group by $group");
 	}
+
+	// untuk bagian option buat pengaturan
 	function get_option($option_name){		
 		$query = $this->db->query("select option_value from dah_options where option_name='$option_name'")->row();
 		return $query->option_value;
 	}
 
+	// query untuk detail penduduk
 	function get_penduduk_user($id_penduduk){
 		return $this->db->query("select * from user,penduduk where user.penduduk_id=penduduk.id and user.penduduk_id='$id_penduduk'");
 	
 	}
+
+	// query untuk jabatan
 	function get_jabatan_user($id_jabatan){
 		return $this->db->query("select * from user,jabatan where user.jabatan=jabatan.id and user.jabatan='$id_jabatan'");
 	
@@ -182,14 +191,18 @@ class M_dah extends CI_Model{
 
 	// end preview file
 
+
+	// ini query untuk dapat last record data
 	function last_record($table){
 		return $this->db->query("select *from $table ORDER BY id DESC LIMIT 1;");
 	}
 
+	// ini query untuk dapat last record surat
 	function last_record_surat($table,$status){
 		return $this->db->query("select *from $table where status_surat='$status' ORDER BY nomor_surat DESC LIMIT 1");
 	}
 
+	// untu pnomoran surat secara otomatis
 	function auto_nomor_surat($nomor){
 		$no= 0;
 		if($nomor == ""){
@@ -203,32 +216,34 @@ class M_dah extends CI_Model{
 		}
 	}
 
-
+	// menampilkan surat secara limitasi yang ditampilkan misal hanya menampilkan data cuma 20 saja
 	function get_surat_limit($status,$limit){
 		$this->db->limit($limit);
 		$this->db->order_by('id', 'desc');
 		$this->db->where(array('status_surat'=> $status));
 		return $this->db->get('surat_mohon');
 	}
-
+	// sama dengan get_data cuma ini lebih spesifik ke surat_mohon
 	function get_surat($limit){
 		$this->db->limit($limit);
 		$this->db->order_by('id', 'desc');
 		return $this->db->get('surat_mohon');
 	}
+	// sama dengan get_data cuma ini lebih spesifik ke surat_mohon dan di order
 
 	function get_surat_order($status){
 		$this->db->order_by('id', 'desc');
 		$this->db->where(array('status_surat'=> $status));
 		return $this->db->get('surat_mohon');
 	}
-
+	// sama dengan get_data cuma ini lebih spesifik ke surat_mohon berdsarkan  nomor_surat
 	function get_surat_order_fix($status){
 		$this->db->order_by('nomor_surat', 'desc');
 		$this->db->where(array('status_surat'=> $status));
 		return $this->db->get('surat_mohon');
 	}
 
+	// khusu untuk surat_lain(tambahan surat)
 	function pilih_surat_limit($id_penduduk,$limit,$table){
 		$this->db->limit($limit);
 		$this->db->order_by('id', 'desc');
@@ -237,21 +252,31 @@ class M_dah extends CI_Model{
 		return $this->db->get($table);
 	}
 
+	// unutk pilih surat  berdasarkan penduduk_id 
 	function pilih_surat($id_penduduk,$status,$table){
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' and status_surat='$status' order by id desc");
 	}
+
+	// unutk pilih surat  berdasarkan penduduk_id 
 
 	function pilih_surat_fix($id_penduduk,$status,$table){
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' and status_surat='$status' order by nomor_surat desc");
 	}
 
+	// unutk pilih surat lain berdasarkan penduduk_id  untuk di admin
+
 	function pilih_surat_lain($id_penduduk,$status,$table){
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' and status='$status' order by id desc");
 	}
 
+	// unutk pilih surat lain berdasarkan penduduk_id 
+
 	function pilih_surat_lain_semua($id_penduduk,$table){
 		return $this->db->query("select * from $table where penduduk_id='$id_penduduk' order by id desc");
 	}
+
+	// unutk menmpilkan surt lain di orderby
+
 	function get_surat_lain_order($status){
 		$this->db->order_by('id', 'desc');
 		$this->db->where(array('status'=> $status));
@@ -659,6 +684,7 @@ function delete_surat_admin_arsip($jenis,$surat_mohon_id){
 
 // start cek notif 
 
+// untuk cek notif dari setiap role
 	function cek_notif_user($id,$status){
 		return $this->db->query("select * from surat_mohon where penduduk_id='$id' and notif='$status' order by id desc");
 	}
@@ -721,22 +747,28 @@ function status_keluarga($nama){
 }
 
 
-
+// menampilkan total penduduk berdasarkan jenis kelamin
 function penduduk_dif_total($status_kel){
 	return $this->db->query("select *from penduduk where jenis_kelamin='$status_kel' ");
 }
 
+// ini utnuk total jumlah kk 
 function kk_total($status_kel){
 	return $this->db->query("select *from penduduk where status_hub_keluarga='$status_kel' ");
 }
 
+// klasifikasi jumlah perdusun
 function dusun_total($dusun){
 	return $this->db->query("select *from penduduk where dusun='$dusun' ");
 }
 
+// jumlah dusun berdasrkan jenis kelamin
+
 function dusun_total_jk($dusun,$status){
 	return $this->db->query("select *from penduduk where dusun='$dusun'and jenis_kelamin='$status' ");
 }
+
+// total dusun
 function kk_dusun_total($dusun,$status_kel){
 	return $this->db->query("select *from penduduk where dusun='$dusun' and status_hub_keluarga='$status_kel' ");
 }

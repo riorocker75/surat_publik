@@ -116,7 +116,7 @@
                                             </div>  
                                                 <div class="form-group">
                                                     <label for="">Pemberitahuan </label>
-                                                    <textarea class="form-control" name="ket_surat" placeholder="di isi apabila menolak atau ada pemberitahuan lanjut ke bersangkutan" rows="3"></textarea>
+                                                    <textarea class="form-control" name="ket_surat" placeholder="di isi apabila menolak atau ada pemberitahuan lanjut ke bersangkutan" rows="3" required=""></textarea>
                                                 </div>  
                                                 <?php echo form_error('ket_surat', '<div class="form-error">', '</div>'); ?>
 

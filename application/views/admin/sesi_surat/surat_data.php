@@ -28,7 +28,6 @@
                         <li>
                             <a href="<?php echo base_url().'user/mohon_akte_lahir'?>" class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;&nbsp;3. Surat Pengantar Pembuatan Akte Lahir </a>
                         </li>
-
                         <li>
                             <a href="<?php echo base_url().'user/mohon_akte_mati'?>" class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;&nbsp;4. Surat Pengantar Pembuatan Akte Kematian </a>
                         </li>

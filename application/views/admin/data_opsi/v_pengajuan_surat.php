@@ -9,8 +9,8 @@
 
 <a href="" onclick="return confirm('Anda yakin mau menghapus item ini ?')"></a>
 
-		<!-- Content Row -->
-		<div class="row">
+    <!-- Content Row -->
+    <div class="row">
             <div class="col-lg-12 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-		    </div>
+        </div>
 <!-- end pengajuan surat -->
 
  <!-- end arsip surat -->
@@ -105,6 +105,7 @@
                             <thead>
                                 <tr>
                                 <th width="2%">No</th>
+                                <th width="20%">Pengaju Surat</th>
                                 <th width="12%">Nomor Ajuan</th>
                                 <th>Jenis Surat</th>
                                 <th width="8%">Status</th>
@@ -122,8 +123,29 @@
                                    ?>
                                    <tr>
                                    <td><?php echo $n++;?></td>
-                               
-                                    <td><?php echo $sl->nomor_mohon_surat?></td>
+                                   <td>
+                                      <?php
+                                            $pxl=array(
+                                                'id' => $sl->penduduk_id
+                                            );
+                                           $penduduks= $this->m_dah->edit_data($pxl,'penduduk')->result();
+                                           foreach($penduduks as $pdl){ 
+                                        ?>
+                                        <span style="line-height:1"> 
+                                           <?php echo $pdl->nama ?>     
+                                        </span>
+                                        <p style="font-size:14px;font-weight:700;top:-20px!important;line-height:1">
+                                          NIK: <?php echo $pdl->nik ?>     
+                                        </p>
+                                
+                                           <?php }?>
+
+                                   </td>
+                                    <td><?php echo $sl->nomor_mohon_surat?>
+                                       <p style="font-size: 11px;opacity: 0.8">
+                                          <?php echo date('d.m.Y',strtotime($sl->tgl_ajukan))?>
+                                        </p>
+                                    </td>
                                     <td><?php echo $op->nama_surat?></td>
                                     <td>
                                        <?php echo $this->m_dah->status_surat_lain($sl->status)?>
@@ -157,6 +179,6 @@
 
 
 <!-- end row -->
-		</div>
+    </div>
 
 </div>

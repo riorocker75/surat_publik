@@ -9,8 +9,8 @@
 
 <a href="" onclick="return confirm('Anda yakin mau menghapus item ini ?')"></a>
 
-		<!-- Content Row -->
-		<div class="row">
+    <!-- Content Row -->
+    <div class="row">
          
 
        <!-- start arsip surat  -->
@@ -125,7 +125,7 @@
                                 <tr>
                                 <th width="2%">No</th>
                                 <th>Pengaju Surat</th>
-                                <th>Nomor Ajuan</th>
+                                <th>Nomor Surat</th>
                                 <th>Jenis Surat</th>
                                 <th>Status</th>
                                 
@@ -155,7 +155,7 @@
                                            <?php }?>
                                     </td>
                                     <td>
-                                      <?php echo $sdtl->surat_mohon_id?>
+                                      <?php echo $sdtl->nomor_surat?>
                                         <p style="font-size: 11px;opacity: 0.8">
                                           <?php echo date('d.m.Y',strtotime($sdtl->tgl_diajukan))?>
                                         </p>
@@ -228,7 +228,8 @@
                               <thead>
                                   <tr>
                                   <th width="2%">No</th>
-                                  <th>Nomor Ajuan</th>
+                                  <th>Pengaju Surat</th>
+                                  <th>Nomor Surat</th>
                                   <th>Jenis Surat</th>
                                   <th>Status</th>
 
@@ -238,6 +239,7 @@
                               </thead> 
                               <tbody>
                                  <?php $n=1; foreach ($surat_lain_terima as $sl ) {?>
+                               
                                      <?php 
                                           $id_lain=array('id' => $sl->surat_id);
                                           $ops=$this->m_dah->edit_data($id_lain,'jenis_surat')->result();
@@ -245,8 +247,28 @@
                                      ?>
                                      <tr>
                                      <td><?php echo $n++;?></td>
-                                 
-                                      <td><?php echo $sl->nomor_mohon_surat?></td>
+                                    <td>
+                                        <?php
+                                            $xl=array(
+                                                'id' => $sl->penduduk_id
+                                            );
+                                           $pendudukx= $this->m_dah->edit_data($xl,'penduduk')->result();
+                                           foreach($pendudukx as $psl){ 
+                                        ?>
+                                        <span style="line-height:1"> 
+                                           <?php echo $psl->nama ?>     
+                                        </span>
+                                        <p style="font-size:14px;font-weight:700;top:-20px!important;line-height:1">
+                                          NIK: <?php echo $psl->nik ?>     
+                                        </p>
+                                
+                                           <?php }?>
+                                    </td>
+                                      <td><?php echo $sl->nomor_surat?>
+                                        <p style="font-size: 11px;opacity: 0.8">
+                                          <?php echo date('d.m.Y',strtotime($sl->tgl_disahkan))?>
+                                        </p>
+                                      </td>
                                       <td><?php echo $op->nama_surat?></td>
                                       <td>
                                          <?php echo $this->m_dah->status_surat_lain($sl->status)?>
@@ -279,6 +301,7 @@
                                 <thead>
                                   <tr>
                                   <th width="2%">No</th>
+                                  <th>Pengaju Surat</th>
                                   <th>Nomor Ajuan</th>
                                   <th>Jenis Surat</th>
                                   <th>Status</th>
@@ -296,8 +319,28 @@
                                      ?>
                                      <tr>
                                      <td><?php echo $n++;?></td>
-                                 
-                                      <td><?php echo $slt->nomor_mohon_surat?></td>
+                                   <td>
+                                        <?php
+                                            $xls=array(
+                                                'id' => $slt->penduduk_id
+                                            );
+                                           $penduduks= $this->m_dah->edit_data($xls,'penduduk')->result();
+                                           foreach($penduduks as $psld){ 
+                                        ?>
+                                        <span style="line-height:1"> 
+                                           <?php echo $psld->nama ?>     
+                                        </span>
+                                        <p style="font-size:14px;font-weight:700;top:-20px!important;line-height:1">
+                                          NIK: <?php echo $psld->nik ?>     
+                                        </p>
+                                
+                                           <?php }?>
+                                    </td>
+                                      <td><?php echo $slt->nomor_mohon_surat?>
+                                        <p style="font-size: 11px;opacity: 0.8">
+                                          <?php echo date('d.m.Y',strtotime($slt->tgl_ajukan))?>
+                                        </p>
+                                      </td>
                                       <td><?php echo $opt->nama_surat?></td>
                                       <td>
                                          <?php echo $this->m_dah->status_surat_lain($slt->status)?>
@@ -334,6 +377,6 @@
              </div>
   <!-- end arsip surat lain -->
 <!-- end row -->
-		</div>
+    </div>
 
 </div>
