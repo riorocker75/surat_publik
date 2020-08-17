@@ -313,7 +313,7 @@
                                   <tr>
                                   <th width="2%">No</th>
                                   <th width="20%">Pengaju Surat</th>
-                                  <th>Nomor Ajuan</th>
+                                  <th>Nomor Surat</th>
                                   <th>Jenis Surat</th>
                                   <th>Status</th>
 
@@ -348,7 +348,7 @@
                                            <?php }?>
 
                                    </td>
-                                      <td><?php echo $sl->nomor_mohon_surat?>
+                                      <td><?php echo $sl->nomor_surat?>
                                          <p style="font-size: 11px;opacity: 0.8">
                                           <?php echo date('d.m.Y',strtotime($sl->tgl_disahkan))?>
                                         </p>
